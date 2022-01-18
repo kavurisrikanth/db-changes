@@ -1,0 +1,41 @@
+(Model Thing {
+    name 'Thing'
+    package 'changestest'
+    properties [
+        (ref {
+            name 'ref'
+            type (RefModel {
+                model #RefModel
+            })
+            group #general
+        })
+        (refColl {
+            name 'refColl'
+            collection true
+            type (RefModel {
+                model #RefModel
+            })
+            group #general
+        })
+        (child {
+            name 'child'
+            type (ChildModel {
+                model #ChildModel
+            })
+            group #general
+        })
+        (childColl {
+            name 'childColl'
+            collection true
+            type (ChildModel {
+                model #ChildModel
+            })
+            group #general
+        })
+    ]
+    propertyGroups [
+        (general {
+            name 'General'
+        })
+    ]
+})

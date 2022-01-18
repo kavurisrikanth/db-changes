@@ -1,0 +1,7 @@
+(Project ChangesTest {
+    name 'ChangesTest'
+    securitySettings ({
+    })
+    domain 'changestest'
+    package 'changestest'
+})

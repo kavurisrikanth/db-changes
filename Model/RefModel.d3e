@@ -1,0 +1,18 @@
+(Model RefModel {
+    name 'RefModel'
+    package 'changestest'
+    properties [
+        (num {
+            name 'num'
+            type (Integer {
+                primitive Integer
+            })
+            group #general
+        })
+    ]
+    propertyGroups [
+        (general {
+            name 'General'
+        })
+    ]
+})
