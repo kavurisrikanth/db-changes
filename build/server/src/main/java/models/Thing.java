@@ -2,11 +2,13 @@ package models;
 
 import d3e.core.CloneContext;
 import d3e.core.SchemaConstants;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -24,9 +26,11 @@ import store.ICloneable;
 @Entity
 public class Thing extends CreatableObject {
   public static final int _MSG = 0;
-  public static final int _CHILD = 1;
-  public static final int _CHILDCOLL = 2;
+  public static final int _NUMS = 1;
+  public static final int _CHILD = 2;
+  public static final int _CHILDCOLL = 3;
   @Field private String msg;
+  @Field @ElementCollection private List<Long> nums = new D3EPersistanceList<>(this, _NUMS);
 
   @Field
   @ChildDocument
@@ -55,7 +59,21 @@ public class Thing extends CreatableObject {
 
   @Override
   public int _fieldsCount() {
-    return 3;
+    return 4;
+  }
+
+  public void addToNums(long val, long index) {
+    collFieldChanged(_NUMS, this.nums);
+    if (index == -1) {
+      this.nums.add(val);
+    } else {
+      this.nums.add(((int) index), val);
+    }
+  }
+
+  public void removeFromNums(long val) {
+    collFieldChanged(_NUMS, this.nums);
+    this.nums.remove(val);
   }
 
   public void addToChildColl(ChildModel val, long index) {
@@ -114,6 +132,19 @@ public class Thing extends CreatableObject {
     }
     fieldChanged(_MSG, this.msg, msg);
     this.msg = msg;
+  }
+
+  public List<Long> getNums() {
+    return this.nums;
+  }
+
+  public void setNums(List<Long> nums) {
+    if (Objects.equals(this.nums, nums)) {
+      return;
+    }
+    collFieldChanged(_NUMS, this.nums, nums);
+    this.nums.clear();
+    this.nums.addAll(nums);
   }
 
   public ChildModel getChild() {
@@ -176,6 +207,7 @@ public class Thing extends CreatableObject {
     super.deepCloneIntoObj(dbObj, ctx);
     Thing _obj = ((Thing) dbObj);
     _obj.setMsg(msg);
+    _obj.setNums(nums);
     ctx.cloneChild(child, (v) -> _obj.setChild(v));
     ctx.cloneChildList(childColl, (v) -> _obj.setChildColl(v));
   }
@@ -186,6 +218,7 @@ public class Thing extends CreatableObject {
     }
     super.cloneInstance(cloneObj);
     cloneObj.setMsg(this.getMsg());
+    cloneObj.setNums(new ArrayList<>(this.getNums()));
     cloneObj.setChild(this.getChild() == null ? null : this.getChild().cloneInstance(null));
     cloneObj.setChildColl(
         this.getChildColl().stream()

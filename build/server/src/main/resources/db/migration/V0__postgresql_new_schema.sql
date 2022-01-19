@@ -19,6 +19,8 @@ create table _report_config_option(_id int8 not null, _save_status int4, _identi
 
 create table _thing(_id int8 not null, _save_status int4, _msg varchar(255), _child_id int8, primary key (_id));
 
+create table _thing_nums_7271fe(_thing_id int8 not null, _nums int8);
+
 create table _thing_child_coll_8127ab(_thing_id int8 not null, _child_coll_id int8 not null, _child_coll_order int4 not null, primary key (_thing_id, _child_coll_order));
 
 create table _user(_id int8 not null, _save_status int4, _is_active bool, _device_token text, primary key (_id));

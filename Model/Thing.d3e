@@ -10,6 +10,14 @@
             })
             group #general
         })
+        (nums {
+            name 'nums'
+            type ({
+                primitive Integer
+            })
+            collection true
+            group #general
+        })
         (child {
             name 'child'
             type (ChildModel {

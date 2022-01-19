@@ -392,6 +392,14 @@ public class ModelSchema1 {
         FieldPrimitiveType.String,
         (s) -> s.getMsg(),
         (s, v) -> s.setMsg(v));
+    m.addPrimitiveCollection(
+        "nums",
+        Thing._NUMS,
+        "_nums",
+        "_thing_nums_7271fe",
+        FieldPrimitiveType.Integer,
+        (s) -> s.getNums(),
+        (s, v) -> s.setNums(v));
     m.addReference(
         "child",
         Thing._CHILD,

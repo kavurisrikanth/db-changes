@@ -390,6 +390,7 @@ type Thing
 	id : Long
 	localId : Long
 	msg : String
+	nums : [Long]
 	child : ChildModel
 	childColl : [ChildModel]
 }
@@ -398,6 +399,7 @@ input ThingEntityInput
 {
 	id : Long
 	msg : String
+	nums : [Long]
 	child : ChildModelEntityInput
 	childColl : [ChildModelEntityInput]
 }
