@@ -109,28 +109,6 @@ public abstract class DBObject {
 		onPropertySet(false);
 	}
 	
-	public void addedToCollField(int field, Object oldValue, Object toAdd, long idx) {
-		if(inProxy || isOld()) {
-			return;
-		}
-		List afterAdd = new ArrayList((List) oldValue);
-		if (idx == -1) {
-			afterAdd.add(toAdd);
-		} else {
-			afterAdd.add((int) idx, afterAdd);
-		}
-		collFieldChanged(field, oldValue, afterAdd);
-	}
-	
-	public void removedFromCollField(int field, Object oldValue, Object toRemove) {
-		if(inProxy || isOld()) {
-			return;
-		}
-		List afterRemove = new ArrayList((List) oldValue);
-		afterRemove.remove(toRemove);
-		collFieldChanged(field, oldValue, afterRemove);
-	}
-	
 	public void invCollFieldChanged(int field, Object oldValue) {
 		if(inProxy || isOld()) {
 			return;
