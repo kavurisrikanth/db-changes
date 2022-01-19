@@ -63,16 +63,18 @@ public class Thing extends CreatableObject {
   }
 
   public void addToNums(long val, long index) {
-    collFieldChanged(_NUMS, this.nums);
+    addedToCollField(_NUMS, this.nums, val, index);
+//    collFieldChanged(_NUMS, this.nums);
     if (index == -1) {
-      this.nums.add(val);
-    } else {
-      this.nums.add(((int) index), val);
-    }
+	  nums.add(val);
+	} else {
+	  nums.add(((int) index), val);
+	}
   }
 
   public void removeFromNums(long val) {
-    collFieldChanged(_NUMS, this.nums);
+	  removedFromCollField(_NUMS, nums, val);
+//    collFieldChanged(_NUMS, this.nums);
     this.nums.remove(val);
   }
 
