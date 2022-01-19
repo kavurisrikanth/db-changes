@@ -10,6 +10,7 @@
         })
     ]
     name 'Welcome Page'
+    path 'D3EPage'
     package 'changestest'
     build (CRef welcomeCol {
         name 'welcomeCol'
@@ -46,9 +47,20 @@
         (onInit {
             name 'onInit'
             block ```
-                
                 /* Your code here. */
-                this.thing = Thing();
+                this.thing = Thing(
+                    child: ChildModel(
+                        num: 1
+                    ),
+                    childColl: [
+                        ChildModel(
+                            num: 2
+                        ),
+                        ChildModel(
+                            num: 3
+                        ),
+                    ]
+                );
             ```
             returnType ( {
             })
@@ -59,9 +71,10 @@
             on #button
             event #onPressed
             block ```
-                
                 /* Your code here. */
-                thing.save();
+                DBResult res = thing.save().await;
+                
+                res = thing.save().await;
             ```
             returnType ( {
             })

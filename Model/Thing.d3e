@@ -23,9 +23,9 @@
     ]
     actions [
         (Go {
+            runOn OnUpdate
             name 'go'
             block ```
-                
                 /* Your code here. */
                 ThingUtil.handleThing(this);
             ```
