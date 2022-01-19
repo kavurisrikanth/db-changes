@@ -1,5 +1,6 @@
 package classes;
 
+import models.ChildModel;
 import models.Thing;
 
 public class ThingUtil {
@@ -18,5 +19,11 @@ public class ThingUtil {
      thing.child.num = num;
     */
     thing.setMsg(msg);
+    
+    ChildModel child = thing.getChild();
+    ChildModel child2 = new ChildModel();
+    thing.setChild(child2);
+    
+    thing.setChild(child);
   }
 }
