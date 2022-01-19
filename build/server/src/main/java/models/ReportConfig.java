@@ -53,7 +53,7 @@ public class ReportConfig extends DatabaseObject {
   }
 
   public void addToValues(ReportConfigOption val, long index) {
-    collFieldChanged(_VALUES, this.values);
+    addedToCollField(_VALUES, this.values, val, index);
     val.setMasterReportConfig(this);
     val._setChildIdx(_VALUES);
     if (index == -1) {
@@ -64,7 +64,7 @@ public class ReportConfig extends DatabaseObject {
   }
 
   public void removeFromValues(ReportConfigOption val) {
-    collFieldChanged(_VALUES, this.values);
+    removedFromCollField(_VALUES, this.values, val);
     val._clearChildIdx();
     this.values.remove(val);
   }

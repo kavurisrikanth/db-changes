@@ -43,7 +43,7 @@ public abstract class D3EMessage extends CreatableObject {
   }
 
   public void addToTo(String val, long index) {
-    collFieldChanged(_TO, this.to);
+    addedToCollField(_TO, this.to, val, index);
     if (index == -1) {
       this.to.add(val);
     } else {
@@ -52,7 +52,7 @@ public abstract class D3EMessage extends CreatableObject {
   }
 
   public void removeFromTo(String val) {
-    collFieldChanged(_TO, this.to);
+    removedFromCollField(_TO, this.to, val);
     this.to.remove(val);
   }
 

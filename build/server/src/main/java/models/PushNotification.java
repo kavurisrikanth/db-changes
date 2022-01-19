@@ -42,7 +42,7 @@ public class PushNotification extends CreatableObject {
   }
 
   public void addToDeviceTokens(String val, long index) {
-    collFieldChanged(_DEVICETOKENS, this.deviceTokens);
+    addedToCollField(_DEVICETOKENS, this.deviceTokens, val, index);
     if (index == -1) {
       this.deviceTokens.add(val);
     } else {
@@ -51,7 +51,7 @@ public class PushNotification extends CreatableObject {
   }
 
   public void removeFromDeviceTokens(String val) {
-    collFieldChanged(_DEVICETOKENS, this.deviceTokens);
+    removedFromCollField(_DEVICETOKENS, this.deviceTokens, val);
     this.deviceTokens.remove(val);
   }
 

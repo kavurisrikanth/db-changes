@@ -64,22 +64,20 @@ public class Thing extends CreatableObject {
 
   public void addToNums(long val, long index) {
     addedToCollField(_NUMS, this.nums, val, index);
-//    collFieldChanged(_NUMS, this.nums);
     if (index == -1) {
-	  nums.add(val);
-	} else {
-	  nums.add(((int) index), val);
-	}
+      this.nums.add(val);
+    } else {
+      this.nums.add(((int) index), val);
+    }
   }
 
   public void removeFromNums(long val) {
-	  removedFromCollField(_NUMS, nums, val);
-//    collFieldChanged(_NUMS, this.nums);
+    removedFromCollField(_NUMS, this.nums, val);
     this.nums.remove(val);
   }
 
   public void addToChildColl(ChildModel val, long index) {
-    collFieldChanged(_CHILDCOLL, this.childColl);
+    addedToCollField(_CHILDCOLL, this.childColl, val, index);
     val.setMasterThing(this);
     val._setChildIdx(_CHILDCOLL);
     if (index == -1) {
@@ -90,7 +88,7 @@ public class Thing extends CreatableObject {
   }
 
   public void removeFromChildColl(ChildModel val) {
-    collFieldChanged(_CHILDCOLL, this.childColl);
+    removedFromCollField(_CHILDCOLL, this.childColl, val);
     val._clearChildIdx();
     this.childColl.remove(val);
   }

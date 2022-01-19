@@ -47,7 +47,7 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void addToBcc(String val, long index) {
-    collFieldChanged(_BCC, this.bcc);
+    addedToCollField(_BCC, this.bcc, val, index);
     if (index == -1) {
       this.bcc.add(val);
     } else {
@@ -56,12 +56,12 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromBcc(String val) {
-    collFieldChanged(_BCC, this.bcc);
+    removedFromCollField(_BCC, this.bcc, val);
     this.bcc.remove(val);
   }
 
   public void addToCc(String val, long index) {
-    collFieldChanged(_CC, this.cc);
+    addedToCollField(_CC, this.cc, val, index);
     if (index == -1) {
       this.cc.add(val);
     } else {
@@ -70,12 +70,12 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromCc(String val) {
-    collFieldChanged(_CC, this.cc);
+    removedFromCollField(_CC, this.cc, val);
     this.cc.remove(val);
   }
 
   public void addToInlineAttachments(DFile val, long index) {
-    collFieldChanged(_INLINEATTACHMENTS, this.inlineAttachments);
+    addedToCollField(_INLINEATTACHMENTS, this.inlineAttachments, val, index);
     if (index == -1) {
       this.inlineAttachments.add(val);
     } else {
@@ -84,12 +84,12 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromInlineAttachments(DFile val) {
-    collFieldChanged(_INLINEATTACHMENTS, this.inlineAttachments);
+    removedFromCollField(_INLINEATTACHMENTS, this.inlineAttachments, val);
     this.inlineAttachments.remove(val);
   }
 
   public void addToAttachments(DFile val, long index) {
-    collFieldChanged(_ATTACHMENTS, this.attachments);
+    addedToCollField(_ATTACHMENTS, this.attachments, val, index);
     if (index == -1) {
       this.attachments.add(val);
     } else {
@@ -98,7 +98,7 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromAttachments(DFile val) {
-    collFieldChanged(_ATTACHMENTS, this.attachments);
+    removedFromCollField(_ATTACHMENTS, this.attachments, val);
     this.attachments.remove(val);
   }
 
