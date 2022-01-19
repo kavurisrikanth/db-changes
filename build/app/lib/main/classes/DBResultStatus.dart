@@ -1,0 +1,1 @@
+enum DBResultStatus { Success, Errors }

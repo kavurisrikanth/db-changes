@@ -1,0 +1,27 @@
+name: changestest
+description: A new Flutter project.
+version: 1.0.0+1
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+dependencies:
+  flutter: 
+    sdk: flutter
+  graphql_flutter: ^5.0.0
+  cupertino_icons: ^0.1.2
+  localstorage: ^4.0.0+1
+  global_configuration: ^2.0.0-nullsafety.0
+  http: ^0.13.1
+  # http_parser: ^3.1.4
+  decimal: ^0.3.5
+  google_fonts: ^2.1.0
+  intl: ^0.17.0
+  universal_html: ^1.2.4
+  web_socket_channel: ^2.1.0
+  flutter_layout_grid: ^1.0.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: false
+  assets:
+    - resource/settings.json

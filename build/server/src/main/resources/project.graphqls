@@ -1,0 +1,444 @@
+scalar Date
+
+scalar LocalDate
+
+scalar LocalDateTime
+
+scalar LocalTime
+
+scalar OffsetDateTime
+
+scalar ExpressionString
+
+scalar BlockString
+
+scalar Type
+
+scalar Duration
+
+schema
+{
+	query: Query
+	mutation: Mutation
+}
+
+union D3EMessageUnionX =  EmailMessage | SMSMessage
+
+union UserUnionX =  AnonymousUser
+
+interface DBObject
+{
+	id : Long
+	localId : Long
+}
+
+type DatabaseObject
+{
+	object : DBObject
+}
+
+type DFile
+{
+	name : String
+	id : String
+	size : Long
+}
+
+input DFileEntityInput
+{
+	name : String
+	id : String
+	size : Long
+}
+
+type LoginResult
+{
+	success : Boolean
+	token : String
+	failureMessage : String
+	userObject : UserUnionX
+}
+
+input ObjectRef
+{
+	id : Long
+	type : String
+}
+
+type Query
+{
+	getObject : DatabaseObject
+	getAnonymousUserById ( id: Long ) : AnonymousUser
+	getOneTimePasswordById ( id: Long ) : OneTimePassword
+	checkTokenUniqueInOneTimePassword ( oneTimePasswordId: Long token: String ) : Boolean
+	getRefModelById ( id: Long ) : RefModel
+	getThingById ( id: Long ) : Thing
+	loginWithOTP ( token: String code: String ) : LoginResult
+}
+
+type Mutation
+{
+}
+
+type MutateOneTimePasswordResult
+{
+	status : MutateResultStatus
+	value : OneTimePassword
+	errors : [String]
+}
+
+type Subscription
+{
+	onAnonymousUserChangeEvent : AnonymousUserChangeEvent
+	onAnonymousUserChangeEventById ( ids: [Long] ) : AnonymousUserChangeEvent
+	onOneTimePasswordChangeEvent : OneTimePasswordChangeEvent
+	onOneTimePasswordChangeEventById ( ids: [Long] ) : OneTimePasswordChangeEvent
+	onRefModelChangeEvent : RefModelChangeEvent
+	onRefModelChangeEventById ( ids: [Long] ) : RefModelChangeEvent
+	onThingChangeEvent : ThingChangeEvent
+	onThingChangeEventById ( ids: [Long] ) : ThingChangeEvent
+	onUserChangeEvent : UserChangeEvent
+	onUserChangeEventById ( ids: [Long] ) : UserChangeEvent
+	onUserSessionChangeEvent : UserSessionChangeEvent
+	onUserSessionChangeEventById ( ids: [Long] ) : UserSessionChangeEvent
+}
+
+type AnonymousUserChangeEvent
+{
+	model : AnonymousUser
+	changeType : ChangeEventType
+}
+
+type OneTimePasswordChangeEvent
+{
+	model : OneTimePassword
+	changeType : ChangeEventType
+}
+
+type RefModelChangeEvent
+{
+	model : RefModel
+	changeType : ChangeEventType
+}
+
+type ThingChangeEvent
+{
+	model : Thing
+	changeType : ChangeEventType
+}
+
+type UserChangeEvent
+{
+	model : UserUnionX
+	changeType : ChangeEventType
+}
+
+type UserSessionChangeEvent
+{
+	model : UserSession
+	changeType : ChangeEventType
+}
+
+type AnonymousUser
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	isActive : Boolean
+	deviceToken : String
+}
+
+input AnonymousUserEntityInput
+{
+	id : Long
+	isActive : Boolean
+	deviceToken : String
+}
+
+type Avatar
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	image : D3EImage
+	createFrom : String
+}
+
+input AvatarEntityInput
+{
+	id : Long
+	image : D3EImageEntityInput
+	createFrom : String
+}
+
+type ChangePasswordRequest
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	newPassword : String
+}
+
+input ChangePasswordRequestEntityInput
+{
+	id : Long
+	newPassword : String
+}
+
+type ChildModel
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	num : Long
+}
+
+input ChildModelEntityInput
+{
+	id : Long
+	num : Long
+}
+
+type D3EImage
+{
+	size : Long
+	width : Long
+	height : Long
+	file : DFile
+}
+
+input D3EImageEntityInput
+{
+	id : Long
+	size : Long
+	width : Long
+	height : Long
+	file : DFileEntityInput
+}
+
+input D3EMessageEntityInputUnionX
+{
+	type : String
+	valueEmailMessage : EmailMessageEntityInput
+	valueSMSMessage : SMSMessageEntityInput
+}
+
+input D3EMessageEntityInput
+{
+	id : Long
+	from : String
+	to : [String]
+	body : String
+	createdOn : LocalDateTime
+}
+
+type EmailMessage
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	bcc : [String]
+	cc : [String]
+	subject : String
+	html : Boolean
+	inlineAttachments : [DFile]
+	attachments : [DFile]
+	from : String
+	to : [String]
+	body : String
+	createdOn : LocalDateTime
+}
+
+input EmailMessageEntityInput
+{
+	id : Long
+	bcc : [String]
+	cc : [String]
+	subject : String
+	html : Boolean
+	inlineAttachments : [DFileEntityInput]
+	attachments : [DFileEntityInput]
+	from : String
+	to : [String]
+	body : String
+	createdOn : LocalDateTime
+}
+
+type OneTimePassword
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	input : String
+	inputType : String
+	userType : String
+	success : Boolean
+	errorMsg : String
+	token : String
+	expiry : LocalDateTime
+}
+
+input OneTimePasswordEntityInput
+{
+	id : Long
+	input : String
+	inputType : String
+	userType : String
+}
+
+type PushNotification
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	deviceTokens : [String]
+	title : String
+	body : String
+	path : String
+}
+
+input PushNotificationEntityInput
+{
+	id : Long
+	deviceTokens : [String]
+	title : String
+	body : String
+	path : String
+}
+
+type RefModel
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	num : Long
+}
+
+input RefModelEntityInput
+{
+	id : Long
+	num : Long
+}
+
+type ReportConfig
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	identity : String
+	values : [ReportConfigOption]
+}
+
+input ReportConfigEntityInput
+{
+	id : Long
+	identity : String
+	values : [ReportConfigOptionEntityInput]
+}
+
+type ReportConfigOption
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	identity : String
+	value : String
+}
+
+input ReportConfigOptionEntityInput
+{
+	id : Long
+	identity : String
+	value : String
+}
+
+type SMSMessage
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	dltTemplateId : String
+	from : String
+	to : [String]
+	body : String
+	createdOn : LocalDateTime
+}
+
+input SMSMessageEntityInput
+{
+	id : Long
+	dltTemplateId : String
+	from : String
+	to : [String]
+	body : String
+	createdOn : LocalDateTime
+}
+
+type Thing
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	child : ChildModel
+	childColl : [ChildModel]
+}
+
+input ThingEntityInput
+{
+	id : Long
+	child : ChildModelEntityInput
+	childColl : [ChildModelEntityInput]
+}
+
+input UserEntityInputUnionX
+{
+	type : String
+	valueAnonymousUser : AnonymousUserEntityInput
+}
+
+input UserEntityInput
+{
+	id : Long
+	isActive : Boolean
+	deviceToken : String
+}
+
+type UserSession
+	implements DBObject
+{
+	id : Long
+	localId : Long
+	userSessionId : String
+}
+
+input UserSessionEntityInputUnionX
+{
+	type : String
+}
+
+input UserSessionEntityInput
+{
+	id : Long
+	userSessionId : String
+}
+
+enum MutateResultStatus {
+	ServerError
+	Success
+	AuthFail
+	ValidationFail
+	BadRequest
+}
+
+enum ChangeEventType {
+	Insert
+	Update
+	Delete
+}
+
+enum SubscriptionChangeType {
+	All
+	Insert
+	Update
+	Delete
+}

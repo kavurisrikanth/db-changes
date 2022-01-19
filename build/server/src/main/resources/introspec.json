@@ -1,0 +1,3885 @@
+{
+	"queryType": {
+		"name": "Query"
+	},
+	"mutationType": {
+		"name": "Mutation"
+	},
+	"subscriptionType": {
+		"name": "Subscription"
+	},
+	"types": [
+		{
+			"kind": "SCALAR",
+			"name": "Date",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "LocalDate",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "LocalDateTime",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "LocalTime",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "OffsetDateTime",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "ExpressionString",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "BlockString",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "Type",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "Duration",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "String",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "Long",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "Float",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "SCALAR",
+			"name": "Boolean",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "ENUM",
+			"name": "MutateResultStatus",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": [
+				{
+					"name": "ServerError",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "Success",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "AuthFail",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "ValidationFail",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "BadRequest",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"possibleTypes": null
+		},
+		{
+			"kind": "ENUM",
+			"name": "ChangeEventType",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": [
+				{
+					"name": "Insert",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "Update",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "Delete",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"possibleTypes": null
+		},
+		{
+			"kind": "ENUM",
+			"name": "SubscriptionChangeType",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": [
+				{
+					"name": "All",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "Insert",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "Update",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "Delete",
+					"description": "",
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"possibleTypes": null
+		},
+		{
+			"kind": "UNION",
+			"name": "D3EMessageUnionX",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": [
+				{
+					"kind": "OBJECT",
+					"name": "EmailMessage",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "SMSMessage",
+					"ofType": null
+				}
+			]
+		},
+		{
+			"kind": "UNION",
+			"name": "UserUnionX",
+			"description": "",
+			"fields": null,
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": [
+				{
+					"kind": "OBJECT",
+					"name": "AnonymousUser",
+					"ofType": null
+				}
+			]
+		},
+		{
+			"kind": "INTERFACE",
+			"name": "DBObject",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": [
+				{
+					"kind": "OBJECT",
+					"name": "AnonymousUser",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "Avatar",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "ChangePasswordRequest",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "ChildModel",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "EmailMessage",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "OneTimePassword",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "PushNotification",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "RefModel",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "ReportConfig",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "ReportConfigOption",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "SMSMessage",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "Thing",
+					"ofType": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "UserSession",
+					"ofType": null
+				}
+			]
+		},
+		{
+			"kind": "OBJECT",
+			"name": "DatabaseObject",
+			"description": "",
+			"fields": [
+				{
+					"name": "object",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "INTERFACE",
+						"name": "DBObject",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "DFile",
+			"description": "",
+			"fields": [
+				{
+					"name": "name",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "size",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "DFileEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "name",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "size",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "LoginResult",
+			"description": "",
+			"fields": [
+				{
+					"name": "success",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "token",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "failureMessage",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "userObject",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "UNION",
+						"name": "UserUnionX",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "ObjectRef",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "type",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "Query",
+			"description": "",
+			"fields": [
+				{
+					"name": "getObject",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "DatabaseObject",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "getAnonymousUserById",
+					"description": "",
+					"args": [
+						{
+							"name": "id",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "Long",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "AnonymousUser",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "getOneTimePasswordById",
+					"description": "",
+					"args": [
+						{
+							"name": "id",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "Long",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "OneTimePassword",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "checkTokenUniqueInOneTimePassword",
+					"description": "",
+					"args": [
+						{
+							"name": "oneTimePasswordId",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "Long",
+								"ofType": null
+							},
+							"defaultValue": null
+						},
+						{
+							"name": "token",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "getRefModelById",
+					"description": "",
+					"args": [
+						{
+							"name": "id",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "Long",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "RefModel",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "getThingById",
+					"description": "",
+					"args": [
+						{
+							"name": "id",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "Long",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "Thing",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "loginWithOTP",
+					"description": "",
+					"args": [
+						{
+							"name": "token",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": null
+						},
+						{
+							"name": "code",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "LoginResult",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "MutateOneTimePasswordResult",
+			"description": "",
+			"fields": [
+				{
+					"name": "status",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "MutateResultStatus",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "value",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "OneTimePassword",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "errors",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "Subscription",
+			"description": "",
+			"fields": [
+				{
+					"name": "onAnonymousUserChangeEvent",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "AnonymousUserChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onAnonymousUserChangeEventById",
+					"description": "",
+					"args": [
+						{
+							"name": "ids",
+							"description": "",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Long",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "AnonymousUserChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onOneTimePasswordChangeEvent",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "OneTimePasswordChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onOneTimePasswordChangeEventById",
+					"description": "",
+					"args": [
+						{
+							"name": "ids",
+							"description": "",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Long",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "OneTimePasswordChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onRefModelChangeEvent",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "RefModelChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onRefModelChangeEventById",
+					"description": "",
+					"args": [
+						{
+							"name": "ids",
+							"description": "",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Long",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "RefModelChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onThingChangeEvent",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "ThingChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onThingChangeEventById",
+					"description": "",
+					"args": [
+						{
+							"name": "ids",
+							"description": "",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Long",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "ThingChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onUserChangeEvent",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "UserChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onUserChangeEventById",
+					"description": "",
+					"args": [
+						{
+							"name": "ids",
+							"description": "",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Long",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "UserChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onUserSessionChangeEvent",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "UserSessionChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "onUserSessionChangeEventById",
+					"description": "",
+					"args": [
+						{
+							"name": "ids",
+							"description": "",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Long",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "UserSessionChangeEvent",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "AnonymousUserChangeEvent",
+			"description": "",
+			"fields": [
+				{
+					"name": "model",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "AnonymousUser",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "changeType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "ChangeEventType",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "OneTimePasswordChangeEvent",
+			"description": "",
+			"fields": [
+				{
+					"name": "model",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "OneTimePassword",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "changeType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "ChangeEventType",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "RefModelChangeEvent",
+			"description": "",
+			"fields": [
+				{
+					"name": "model",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "RefModel",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "changeType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "ChangeEventType",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "ThingChangeEvent",
+			"description": "",
+			"fields": [
+				{
+					"name": "model",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "Thing",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "changeType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "ChangeEventType",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "UserChangeEvent",
+			"description": "",
+			"fields": [
+				{
+					"name": "model",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "UNION",
+						"name": "UserUnionX",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "changeType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "ChangeEventType",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "UserSessionChangeEvent",
+			"description": "",
+			"fields": [
+				{
+					"name": "model",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "UserSession",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "changeType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "ChangeEventType",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "AnonymousUser",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "isActive",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "deviceToken",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "AnonymousUserEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "isActive",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "deviceToken",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "Avatar",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "image",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "D3EImage",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "createFrom",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "AvatarEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "image",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "INPUT_OBJECT",
+						"name": "D3EImageEntityInput",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "createFrom",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "ChangePasswordRequest",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "newPassword",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "ChangePasswordRequestEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "newPassword",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "ChildModel",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "num",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "ChildModelEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "num",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "D3EImage",
+			"description": "",
+			"fields": [
+				{
+					"name": "size",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "width",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "height",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "file",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "DFile",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "D3EImageEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "size",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "width",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "height",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "file",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "INPUT_OBJECT",
+						"name": "DFileEntityInput",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "D3EMessageEntityInputUnionX",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "type",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "valueEmailMessage",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "INPUT_OBJECT",
+						"name": "EmailMessageEntityInput",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "valueSMSMessage",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "INPUT_OBJECT",
+						"name": "SMSMessageEntityInput",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "D3EMessageEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "from",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "to",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "body",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "createdOn",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "LocalDateTime",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "EmailMessage",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "bcc",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "cc",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "subject",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "html",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "inlineAttachments",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "OBJECT",
+							"name": "DFile",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "attachments",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "OBJECT",
+							"name": "DFile",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "from",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "to",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "body",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "createdOn",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "LocalDateTime",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "EmailMessageEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "bcc",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "cc",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "subject",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "html",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "inlineAttachments",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "INPUT_OBJECT",
+							"name": "DFileEntityInput",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "attachments",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "INPUT_OBJECT",
+							"name": "DFileEntityInput",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "from",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "to",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "body",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "createdOn",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "LocalDateTime",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "OneTimePassword",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "input",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "inputType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "userType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "success",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "errorMsg",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "token",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "expiry",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "LocalDateTime",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "OneTimePasswordEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "input",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "inputType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "userType",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "PushNotification",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "deviceTokens",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "title",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "body",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "path",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "PushNotificationEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "deviceTokens",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "title",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "body",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "path",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "RefModel",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "num",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "RefModelEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "num",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "ReportConfig",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "identity",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "values",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "OBJECT",
+							"name": "ReportConfigOption",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "ReportConfigEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "identity",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "values",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "INPUT_OBJECT",
+							"name": "ReportConfigOptionEntityInput",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "ReportConfigOption",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "identity",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "value",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "ReportConfigOptionEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "identity",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "value",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "SMSMessage",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "dltTemplateId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "from",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "to",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "body",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "createdOn",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "LocalDateTime",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "SMSMessageEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "dltTemplateId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "from",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "to",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "body",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "createdOn",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "LocalDateTime",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "Thing",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "child",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "ChildModel",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "childColl",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "OBJECT",
+							"name": "ChildModel",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "ThingEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "child",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "INPUT_OBJECT",
+						"name": "ChildModelEntityInput",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "childColl",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "INPUT_OBJECT",
+							"name": "ChildModelEntityInput",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "UserEntityInputUnionX",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "type",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "valueAnonymousUser",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "INPUT_OBJECT",
+						"name": "AnonymousUserEntityInput",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "UserEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "isActive",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Boolean",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "deviceToken",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "UserSession",
+			"description": "",
+			"fields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "localId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "userSessionId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+				{
+					"kind": "INTERFACE",
+					"name": "DBObject",
+					"ofType": null
+				}
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "UserSessionEntityInputUnionX",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "type",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "INPUT_OBJECT",
+			"name": "UserSessionEntityInput",
+			"description": "",
+			"fields": null,
+			"inputFields": [
+				{
+					"name": "id",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "Long",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "userSessionId",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "SCALAR",
+						"name": "String",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"interfaces": null,
+			"enumValues": null,
+			"possibleTypes": null
+		}
+	],
+	"directives": [
+		{
+			"name": "include",
+			"description": "Directs the executor to include this field or fragment only when the `if` argument is true",
+			"locations": [
+				"FIELD",
+				"FRAGMENT_SPREAD",
+				"INLINE_FRAGMENT"
+			],
+			"args": [
+				{
+					"name": "if",
+					"description": "Included when true.",
+					"type": {
+						"kind": "NON_NULL",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "Boolean",
+							"ofType": null
+						}
+					},
+					"defaultValue": null
+				}
+			]
+		},
+		{
+			"name": "skip",
+			"description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
+			"locations": [
+				"FIELD",
+				"FRAGMENT_SPREAD",
+				"INLINE_FRAGMENT"
+			],
+			"args": [
+				{
+					"name": "if",
+					"description": "Skipped when true.",
+					"type": {
+						"kind": "NON_NULL",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "Boolean",
+							"ofType": null
+						}
+					},
+					"defaultValue": null
+				}
+			]
+		}
+	]
+}

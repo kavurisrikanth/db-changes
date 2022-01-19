@@ -1,9 +1,10 @@
 class ThingUtil {
     static void handleThing(Thing thing) {
         // Make changes
-        thing.child.num++;
+        Integer num = thing.child.num;
+        thing.child.num = num + 1;
 
         // Revert
-        thing.child.num--;
+        thing.child.num = num;
     }
 }
