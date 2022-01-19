@@ -250,7 +250,7 @@ public abstract class DatabaseObject extends DBObject implements ICloneable {
 				obj = obj._masterObject();
 			} while (obj != null);
 		}
-		informChangeToMaster();
+		informChangeToMaster(true);
 	}
 
 	public void setOld(DatabaseObject old) {
@@ -277,7 +277,7 @@ public abstract class DatabaseObject extends DBObject implements ICloneable {
 		return false;
 	}
 
-	protected void _handleChildChange(int _childIdx) {
+	protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
 	}
 
 	protected void _checkProxy() {

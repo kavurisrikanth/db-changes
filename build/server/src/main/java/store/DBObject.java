@@ -2,6 +2,7 @@ package store;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import org.apache.commons.collections.CollectionUtils;;
 
@@ -56,12 +57,18 @@ public abstract class DBObject {
 		return false;
 	}
 	
-	public void fieldChanged(int field, Object oldValue) {
+	public void fieldChanged(int field, Object oldValue, Object newValue) {
 		if(inProxy || isOld()) {
 			return;
 		}
-		this._changes.set(field, oldValue);
-		onPropertySet(false);
+		Object _old = _changes.oldValues.get(field);
+		if (_old == null) {
+			this._changes.set(field, oldValue);
+			onPropertySet(false);
+		} else if (Objects.equals(newValue, _old)) {
+			_changes.unset(field);
+			onPropertyUnset();
+		}
 	}
 	
 	public void collFieldChanged(int field, Object oldValue) {
@@ -79,6 +86,8 @@ public abstract class DBObject {
 		} else if (newValue != null) {
 			if (CollectionUtils.isEqualCollection(lc, (List) newValue)) {
 				this._changes.unset(field);
+				onPropertyUnset();
+				return;
 			}
 		}
 		if(oldValue instanceof D3EPersistanceList) {
@@ -107,15 +116,19 @@ public abstract class DBObject {
 	}
 	
 	protected void onPropertySet(boolean inverse) {
-		informChangeToMaster();
+		informChangeToMaster(true);
 	}
 	
-	protected void informChangeToMaster() {
+	protected void onPropertyUnset() {
+		informChangeToMaster(false);
+	}
+	
+	protected void informChangeToMaster(boolean set) {
 		DatabaseObject _master = this._masterObject();
 		if (_master == null) {
 			return;
 		}
-		_master._handleChildChange(this._childIdx);
+		_master._handleChildChange(this._childIdx, set, this);
 	}
 	
 	public void _setChildIdx(int childIdx) {

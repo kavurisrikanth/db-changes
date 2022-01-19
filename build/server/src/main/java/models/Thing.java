@@ -192,7 +192,7 @@ public class Thing extends CreatableObject {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx) {
+  protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
     switch (_childIdx) {
       case _CHILD:
         {
