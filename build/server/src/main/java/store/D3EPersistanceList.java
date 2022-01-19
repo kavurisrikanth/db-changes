@@ -59,8 +59,8 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 		}
 	}
 
-	private void _fieldChanged() {
-		master.collFieldChanged(field, this);
+	private void _fieldChanged(List<E> ghost) {
+		master.collFieldChanged(field, this, ghost);
 	}
 
 	@Override
@@ -102,21 +102,21 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 	@Override
 	public boolean add(E e) {
 		_checkProxy();
-		boolean res = super.add(e);
-		if (res) {
-			_fieldChanged();
+		List<E> ghost = new ArrayList<>(this);
+		if (ghost.add(e)) {
+			_fieldChanged(ghost);
 		}
-		return res;
+		return super.add(e);
 	}
 
 	@Override
 	public boolean remove(Object o) {
 		_checkProxy();
-		boolean res = super.remove(o);
-		if (res) {
-			_fieldChanged();
+		List<E> ghost = new ArrayList<>(this);
+		if (ghost.remove(o)) {
+			_fieldChanged(ghost);
 		}
-		return res;
+		return super.remove(o);
 	}
 
 	@Override
@@ -128,49 +128,51 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 	@Override
 	public boolean addAll(Collection<? extends E> c) {
 		_checkProxy();
-		boolean res = super.addAll(c);
-		if (res) {
-			_fieldChanged();
+		List<E> ghost = new ArrayList<>(this);
+		if (ghost.addAll(c)) {
+			_fieldChanged(ghost);
 		}
-		return res;
+		return super.addAll(c);
 	}
 
 	@Override
 	public boolean addAll(int index, Collection<? extends E> c) {
 		_checkProxy();
-		boolean res = super.addAll(index, c);
-		if (res) {
-			_fieldChanged();
+		List<E> ghost = new ArrayList<>(this);
+		if (ghost.addAll(index, c)) {
+			_fieldChanged(ghost);
 		}
-		return res;
+		return super.addAll(index, c);
 	}
 
 	@Override
 	public boolean removeAll(Collection<?> c) {
 		_checkProxy();
-		boolean res = super.removeAll(c);
-		if (res) {
-			_fieldChanged();
+		List<E> ghost = new ArrayList<>(this);
+		if (ghost.removeAll(c)) {
+			_fieldChanged(ghost);
 		}
-		return res;
+		return super.removeAll(c);
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> c) {
 		_checkProxy();
-		boolean res = super.retainAll(c);
-		if (res) {
-			_fieldChanged();
+		List<E> ghost = new ArrayList<>(this);
+		if (ghost.retainAll(c)) {
+			_fieldChanged(ghost);
 		}
-		return res;
+		return super.retainAll(c);
 	}
 
 	@Override
 	public void clear() {
 		_checkProxy();
 		if (!this.isEmpty()) {
+			List<E> ghost = new ArrayList<>(this);
+			ghost.clear();
+			_fieldChanged(ghost);
 			super.clear();
-			_fieldChanged();			
 		}
 	}
 
@@ -183,23 +185,29 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 	@Override
 	public E set(int index, E element) {
 		_checkProxy();
+		List<E> ghost = new ArrayList<>(this);
+		ghost.set(index, element);
+		_fieldChanged(ghost);
 		E res = super.set(index, element);
-		_fieldChanged();
 		return res;
 	}
 
 	@Override
 	public void add(int index, E element) {
 		_checkProxy();
+		List<E> ghost = new ArrayList<>(this);
+		ghost.add(index, element);
+		_fieldChanged(ghost);
 		super.add(index, element);
-		_fieldChanged();
 	}
 
 	@Override
 	public E remove(int index) {
 		_checkProxy();
+		List<E> ghost = new ArrayList<>(this);
+		ghost.remove(index);
+		_fieldChanged(ghost);
 		E res = super.remove(index);
-		_fieldChanged();
 		return res;
 	}
 
@@ -267,7 +275,6 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 	protected void removeRange(int fromIndex, int toIndex) {
 		_checkProxy();
 		super.removeRange(fromIndex, toIndex);
-		_fieldChanged();
 	}
 
 	@Override
@@ -286,25 +293,29 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 	@Override
 	public boolean removeIf(Predicate<? super E> filter) {
 		_checkProxy();
-		boolean result = super.removeIf(filter);
-		if (result) {
-			_fieldChanged();
+		List<E> ghost = new ArrayList<>(this);
+		if (ghost.removeIf(filter)) {
+			_fieldChanged(ghost);
 		}
-		return result;
+		return super.removeIf(filter);
 	}
 
 	@Override
 	public void replaceAll(UnaryOperator<E> operator) {
 		_checkProxy();
+		List<E> ghost = new ArrayList<>(this);
+		ghost.replaceAll(operator);
+		_fieldChanged(ghost);
 		super.replaceAll(operator);
-		_fieldChanged();
 	}
 
 	@Override
 	public void sort(Comparator<? super E> c) {
 		_checkProxy();
+		List<E> ghost = new ArrayList<>(this);
+		ghost.sort(c);
+		_fieldChanged(ghost);
 		super.sort(c);
-		_fieldChanged();
 	}
 
 	@Override
@@ -333,5 +344,20 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 
 	public boolean isInverse() {
 		return inverse;
+	}
+	
+	public void setAll(List<E> nums) {
+		if (nums.isEmpty()) {
+			// Nothing to do
+			return;
+		}
+		_checkProxy();
+		List<E> ghost = new ArrayList<>(this);
+		ghost.clear();
+		if (ghost.addAll(nums)) {
+			_fieldChanged(ghost);
+		}
+		super.clear();
+		super.addAll(nums);
 	}
 }

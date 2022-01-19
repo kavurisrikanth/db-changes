@@ -63,7 +63,7 @@ public class Thing extends CreatableObject {
   }
 
   public void addToNums(long val, long index) {
-    addedToCollField(_NUMS, this.nums, val, index);
+//    addedToCollField(_NUMS, this.nums, val, index);
     if (index == -1) {
       this.nums.add(val);
     } else {
@@ -142,9 +142,12 @@ public class Thing extends CreatableObject {
     if (Objects.equals(this.nums, nums)) {
       return;
     }
-    collFieldChanged(_NUMS, this.nums, nums);
-    this.nums.clear();
-    this.nums.addAll(nums);
+//    collFieldChanged(_NUMS, this.nums, nums);
+    
+//    this.nums.clear();
+//    this.nums.addAll(nums);
+    
+    ((D3EPersistanceList<Long>) this.nums).setAll(nums);
   }
 
   public ChildModel getChild() {
