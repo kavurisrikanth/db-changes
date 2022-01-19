@@ -1,0 +1,5 @@
+class ThingUtil {
+    static void handleThing(Thing thing) {
+        // TODO
+    }
+}

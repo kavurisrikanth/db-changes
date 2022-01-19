@@ -1,5 +1,6 @@
 (Model ChildModel {
     name 'ChildModel'
+    path 'Model'
     package 'changestest'
     properties [
         (num {
@@ -10,6 +11,7 @@
             group #general
         })
     ]
+    creatable false
     propertyGroups [
         (general {
             name 'General'

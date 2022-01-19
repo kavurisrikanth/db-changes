@@ -1,0 +1,7 @@
+(ComponentTestData WelcomePageData11522 {
+    data [
+        (thing {
+        })
+    ]
+    page #WelcomePage
+})

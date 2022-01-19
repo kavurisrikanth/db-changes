@@ -1,0 +1,14 @@
+(ComponentBoard WelcomePage {
+    title 'WelcomePage'
+    canvas #Canvas
+    x 24500
+    y 24500
+    width 100
+    height 200
+    theme #primary
+    page #WelcomePage
+    views [
+        #WelcomePageData11522
+    ]
+    data #WelcomePageData11522
+})

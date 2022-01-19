@@ -1,0 +1,70 @@
+(D3EPage WelcomePage {
+    category 'UserDefined'
+    properties [
+        (thing {
+            name 'thing'
+            type (Thing {
+                model #Thing
+            })
+            internal true
+        })
+    ]
+    name 'Welcome Page'
+    package 'changestest'
+    build (CRef welcomeCol {
+        name 'welcomeCol'
+        component #Column
+        children [
+            (CRef welcomeText {
+                name 'welcomeText'
+                component #TextView
+                data [
+                    ({
+                        prop #data
+                        value 'Welcome'
+                    })
+                ]
+            })
+            (CRef button {
+                name 'button'
+                component #Button
+                style #primaryButton
+                child (CRef buttontext {
+                    name 'buttontext'
+                    component #TextView
+                    data [
+                        ({
+                            prop #data
+                            value 'Create'
+                        })
+                    ]
+                })
+            })
+        ]
+    })
+    eventHandlers [
+        (onInit {
+            name 'onInit'
+            block ```
+                
+                /* Your code here. */
+                this.thing = Thing();
+            ```
+            returnType ( {
+            })
+        })
+        (onPressedbuttonHandler {
+            name 'onPressedbuttonHandler'
+            type OnEvent
+            on #button
+            event #onPressed
+            block ```
+                
+                /* Your code here. */
+                thing.save();
+            ```
+            returnType ( {
+            })
+        })
+    ]
+})

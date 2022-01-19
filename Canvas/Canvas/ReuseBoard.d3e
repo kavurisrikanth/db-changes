@@ -1,0 +1,4 @@
+(ArtBoard ReuseBoard {
+    title 'ReuseBoard'
+    canvas #Canvas
+})

@@ -1,0 +1,4 @@
+(ArtBoard PasteBoard {
+    title 'PasteBoard'
+    canvas #Canvas
+})

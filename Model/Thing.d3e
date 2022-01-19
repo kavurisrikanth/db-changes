@@ -1,28 +1,15 @@
 (Model Thing {
     name 'Thing'
+    path 'Model'
     package 'changestest'
     properties [
-        (ref {
-            name 'ref'
-            type (RefModel {
-                model #RefModel
-            })
-            group #general
-        })
-        (refColl {
-            name 'refColl'
-            collection true
-            type (RefModel {
-                model #RefModel
-            })
-            group #general
-        })
         (child {
             name 'child'
             type (ChildModel {
                 model #ChildModel
             })
             group #general
+            child true
         })
         (childColl {
             name 'childColl'
@@ -31,6 +18,17 @@
                 model #ChildModel
             })
             group #general
+            child true
+        })
+    ]
+    actions [
+        (Go {
+            name 'go'
+            block ```
+                
+                /* Your code here. */
+                ThingUtil.handleThing(this);
+            ```
         })
     ]
     propertyGroups [

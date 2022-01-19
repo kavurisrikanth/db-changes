@@ -1,0 +1,1819 @@
+(StyleTheme primary {
+    name 'Primary'
+    font 'Poppins'
+    styles [
+        (primaryButton {
+            name 'primaryButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff0a62f0'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff083f99'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (secondaryButton {
+            name 'secondaryButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff898b8c'
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff77797a'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (successButton {
+            name 'successButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff317d22'
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff2b691f'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (dangerButton {
+            name 'dangerButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffc72516'
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff962015'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (warningButton {
+            name 'warningButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffd4bf02'
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff0a0a0a'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffa89807'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff0a0a0a'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (darkButton {
+            name 'darkButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff1f1f1d'
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff0a0a0a'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (lightButton {
+            name 'lightButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'fffafafa'
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff0a0a0a'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffbdbdbd'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff0a0a0a'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (linkButton {
+            name 'linkButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff103de0'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff103de0'
+                                })
+                                ({
+                                    prop #decoration
+                                    value 'underline'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (primaryButtonOutline {
+            name 'primaryButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff0a62f0'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ff0a62f0'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff0a62f0'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (secondaryButtonOutline {
+            name 'secondaryButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff898b8c'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ff898b8c'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff898b8c'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (successButtonOutline {
+            name 'successButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff317d22'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ff317d22'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff317d22'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (dangerButtonOutline {
+            name 'dangerButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffc72516'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ffc72516'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffc72516'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (warningButtonOutline {
+            name 'warningButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffd4bf02'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ffd4bf02'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffd4bf02'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff0a0a0a'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (darkButtonOutline {
+            name 'darkButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff1f1f1d'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ff1f1f1d'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff1f1f1d'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (lightButtonOutline {
+            name 'lightButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'fffafafa'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'fffafafa'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'fffafafa'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ff0a0a0a'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (headLineOne {
+            name 'headLineOne'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '32.0'
+                        })
+                        ({
+                            prop #fontWeight
+                            value 'bold'
+                        })
+                    ]
+                })
+            ]
+        })
+        (headLineTwo {
+            name 'headLineTwo'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '24.0'
+                        })
+                        ({
+                            prop #fontWeight
+                            value 'bold'
+                        })
+                    ]
+                })
+            ]
+        })
+        (headLineThree {
+            name 'headLineThree'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '18.0'
+                        })
+                        ({
+                            prop #fontWeight
+                            value 'bold'
+                        })
+                    ]
+                })
+            ]
+        })
+        (headLineFour {
+            name 'headLineFour'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '16.0'
+                        })
+                        ({
+                            prop #fontWeight
+                            value 'bold'
+                        })
+                    ]
+                })
+            ]
+        })
+        (headLineFive {
+            name 'headLineFive'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '13.0'
+                        })
+                        ({
+                            prop #fontWeight
+                            value 'bold'
+                        })
+                    ]
+                })
+            ]
+        })
+        (headLineSix {
+            name 'headLineSix'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '10.0'
+                        })
+                        ({
+                            prop #fontWeight
+                            value 'bold'
+                        })
+                    ]
+                })
+            ]
+        })
+        (displayHeadingOne {
+            name 'displayHeadingOne'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '60.0'
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #top
+                                    value '10.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '10.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (displayHeadingTwo {
+            name 'displayHeadingTwo'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '50.0'
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #top
+                                    value '10.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '10.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (displayHeadingThree {
+            name 'displayHeadingThree'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '40.0'
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #top
+                                    value '10.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '10.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (displayHeadingFour {
+            name 'displayHeadingFour'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #fontSize
+                            value '30.0'
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #top
+                                    value '10.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '10.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (errorText {
+            name 'errorText'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #color
+                            value 'FFFF0000'
+                        })
+                        ({
+                            prop #textAlign
+                            value 'start'
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #top
+                                    value '5.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '5.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (blueText {
+            name 'blueText'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #color
+                            value 'FF1709e8'
+                        })
+                        ({
+                            prop #fontSize
+                            value '13.5'
+                        })
+                    ]
+                })
+            ]
+        })
+        (labelText {
+            name 'labelText'
+            component #TextView
+            states [
+                ({
+                    values [
+                        ({
+                            prop #color
+                            value 'FF515C6F'
+                        })
+                        ({
+                            prop #textAlign
+                            value 'start'
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #top
+                                    value '5.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '5.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (defaultInputField {
+            name 'defaultInputField'
+            component #InputField
+            states [
+                ({
+                    values [
+                        ({
+                            prop #height
+                            value '40.0'
+                        })
+                        ({
+                            prop #backgroundColor
+                            value 'FFFFFFFF'
+                        })
+                        ({
+                            prop #cornerRadius
+                            value '5'
+                        })
+                        ({
+                            prop #style
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF515C6F'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (largeInputField {
+            name 'largeInputField'
+            component #InputField
+            states [
+                ({
+                    values [
+                        ({
+                            prop #height
+                            value '60.0'
+                        })
+                        ({
+                            prop #backgroundColor
+                            value 'FFFFFFFF'
+                        })
+                        ({
+                            prop #cornerRadius
+                            value '2'
+                        })
+                        ({
+                            prop #style
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF515C6F'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (smallInputField {
+            name 'smallInputField'
+            component #InputField
+            states [
+                ({
+                    values [
+                        ({
+                            prop #height
+                            value '30.0'
+                        })
+                        ({
+                            prop #backgroundColor
+                            value 'FFFFFFFF'
+                        })
+                        ({
+                            prop #cornerRadius
+                            value '2'
+                        })
+                        ({
+                            prop #style
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF515C6F'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (disabledInputField {
+            name 'disabledInputField'
+            component #InputField
+            states [
+                ({
+                    values [
+                        ({
+                            prop #height
+                            value '30.0'
+                        })
+                        ({
+                            prop #backgroundColor
+                            value 'FFD7DDE2'
+                        })
+                        ({
+                            prop #cornerRadius
+                            value '2'
+                        })
+                        ({
+                            prop #style
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF515C6F'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #isRenderIngnores
+                            value 'true'
+                        })
+                    ]
+                })
+            ]
+        })
+        (listTile {
+            name 'listTile'
+            component #ListTile
+            states [
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF2D2F5A'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'focused'
+                    ]
+                    values [
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF303151'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'selected'
+                    ]
+                    values [
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF2D2D50'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (dropdown {
+            name 'dropdown'
+            component #DropDown
+            states [
+                ({
+                    values [
+                        ({
+                            prop #dropDownDecoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ff3d81f5'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                                ({
+                                    prop #borderRadius
+                                    values [
+                                        ({
+                                            prop #topLeft
+                                            values [
+                                                ({
+                                                    prop #x
+                                                    value '13'
+                                                })
+                                                ({
+                                                    prop #y
+                                                    value '13'
+                                                })
+                                            ]
+                                        })
+                                        ({
+                                            prop #bottomRight
+                                            values [
+                                                ({
+                                                    prop #x
+                                                    value '13'
+                                                })
+                                                ({
+                                                    prop #y
+                                                    value '13'
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                        ({
+                            prop #placeHolderColor
+                            value 'ff3d81f5'
+                        })
+                    ]
+                })
+            ]
+        })
+        (card {
+            name 'card'
+            component #Card
+            states [
+                ({
+                    values [
+                        ({
+                            prop #color
+                            value 'FF2D2F5A'
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'FF2D2F5A'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (tabBar {
+            name 'tabBar'
+            component #TabBar
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'FF2D2F5A'
+                        })
+                        ({
+                            prop #activeColor
+                            value 'ffffffff'
+                        })
+                    ]
+                })
+            ]
+        })
+        (screenBgColor {
+            name 'screenBgColor'
+            states [
+                ({
+                    values [
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FFF0F4FC'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #left
+                                    value '8.0'
+                                })
+                                ({
+                                    prop #right
+                                    value '8.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '8.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (dropdownWithAllBorders {
+            name 'dropdownWithAllBorders'
+            component #DropDown
+            states [
+                ({
+                    values [
+                        ({
+                            prop #height
+                            value '40.0'
+                        })
+                        ({
+                            prop #viewDecoration
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #dropDownDecoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'ffa9a9a9'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '1.0'
+                                        })
+                                    ]
+                                })
+                                ({
+                                    prop #borderRadius
+                                    values [
+                                        ({
+                                            prop #topLeft
+                                            values [
+                                                ({
+                                                    prop #x
+                                                    value '7'
+                                                })
+                                                ({
+                                                    prop #y
+                                                    value '7'
+                                                })
+                                            ]
+                                        })
+                                        ({
+                                            prop #bottomRight
+                                            values [
+                                                ({
+                                                    prop #x
+                                                    value '7'
+                                                })
+                                                ({
+                                                    prop #y
+                                                    value '7'
+                                                })
+                                            ]
+                                        })
+                                        ({
+                                            prop #topRight
+                                            values [
+                                                ({
+                                                    prop #x
+                                                    value '7'
+                                                })
+                                                ({
+                                                    prop #y
+                                                    value '7'
+                                                })
+                                            ]
+                                        })
+                                        ({
+                                            prop #bottomLeft
+                                            values [
+                                                ({
+                                                    prop #x
+                                                    value '7'
+                                                })
+                                                ({
+                                                    prop #y
+                                                    value '7'
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                        ({
+                            prop #placeHolderColor
+                            value 'ffa9a9a9'
+                        })
+                    ]
+                })
+            ]
+        })
+        (listViewBgColor {
+            name 'ListViewBgColor'
+            states [
+                ({
+                    values [
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FF493E66'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #left
+                                    value '8.0'
+                                })
+                                ({
+                                    prop #right
+                                    value '8.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '8.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (screenBgColorWhite {
+            name 'ScreenBgColorWhite'
+            states [
+                ({
+                    values [
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FFFFFFFF'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #margin
+                            values [
+                                ({
+                                    prop #left
+                                    value '8.0'
+                                })
+                                ({
+                                    prop #right
+                                    value '8.0'
+                                })
+                                ({
+                                    prop #bottom
+                                    value '8.0'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (primaryOrangeButton {
+            name 'primaryOrangeButton'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'FFFE941E'
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'FFCCE8FE'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+        (primaryOrangeButtonOutline {
+            name 'primaryOrangeButtonOutline'
+            component #Button
+            states [
+                ({
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ffffffff'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'FFFE941E'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #constraints
+                            values [
+                                ({
+                                    prop #minHeight
+                                    value '30'
+                                })
+                            ]
+                        })
+                        ({
+                            prop #decoration
+                            values [
+                                ({
+                                    prop #border
+                                    values [
+                                        ({
+                                            prop #color
+                                            value 'FFFE941E'
+                                        })
+                                        ({
+                                            prop #width
+                                            value '2.0'
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                })
+                ({
+                    on [
+                        'hover'
+                    ]
+                    values [
+                        ({
+                            prop #backgroundColor
+                            value 'ff0a62f0'
+                        })
+                        ({
+                            prop #textStyle
+                            values [
+                                ({
+                                    prop #color
+                                    value 'ffffffff'
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+    ]
+})
