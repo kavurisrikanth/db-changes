@@ -35,7 +35,7 @@ public class ReportOutColumn extends DBObject {
   }
 
   public void setType(String type) {
-    fieldChanged(_TYPE, this.type);
+    fieldChanged(_TYPE, this.type, type);
     this.type = type;
   }
 
@@ -44,7 +44,7 @@ public class ReportOutColumn extends DBObject {
   }
 
   public void setValue(String value) {
-    fieldChanged(_VALUE, this.value);
+    fieldChanged(_VALUE, this.value, value);
     this.value = value;
   }
 
@@ -53,7 +53,7 @@ public class ReportOutColumn extends DBObject {
   }
 
   public void setAttributes(List<ReportOutAttribute> attributes) {
-    collFieldChanged(_ATTRIBUTES, this.attributes);
+    collFieldChanged(_ATTRIBUTES, this.attributes, attributes);
     this.attributes = attributes;
   }
 

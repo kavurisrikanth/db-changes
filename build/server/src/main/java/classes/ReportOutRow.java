@@ -38,7 +38,7 @@ public class ReportOutRow extends DBObject {
   }
 
   public void setKey(String key) {
-    fieldChanged(_KEY, this.key);
+    fieldChanged(_KEY, this.key, key);
     this.key = key;
   }
 
@@ -47,7 +47,7 @@ public class ReportOutRow extends DBObject {
   }
 
   public void setParentKey(String parentKey) {
-    fieldChanged(_PARENTKEY, this.parentKey);
+    fieldChanged(_PARENTKEY, this.parentKey, parentKey);
     this.parentKey = parentKey;
   }
 
@@ -56,7 +56,7 @@ public class ReportOutRow extends DBObject {
   }
 
   public void setCells(List<ReportOutCell> cells) {
-    collFieldChanged(_CELLS, this.cells);
+    collFieldChanged(_CELLS, this.cells, cells);
     this.cells = cells;
   }
 
@@ -79,7 +79,7 @@ public class ReportOutRow extends DBObject {
   }
 
   public void setGroupingKey(String groupingKey) {
-    fieldChanged(_GROUPINGKEY, this.groupingKey);
+    fieldChanged(_GROUPINGKEY, this.groupingKey, groupingKey);
     this.groupingKey = groupingKey;
   }
 

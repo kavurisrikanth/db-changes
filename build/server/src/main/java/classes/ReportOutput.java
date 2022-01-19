@@ -46,7 +46,7 @@ public class ReportOutput extends DBObject {
   }
 
   public void setOptions(List<ReportOutOption> options) {
-    collFieldChanged(_OPTIONS, this.options);
+    collFieldChanged(_OPTIONS, this.options, options);
     this.options = options;
   }
 
@@ -69,7 +69,7 @@ public class ReportOutput extends DBObject {
   }
 
   public void setColumns(List<ReportOutColumn> columns) {
-    collFieldChanged(_COLUMNS, this.columns);
+    collFieldChanged(_COLUMNS, this.columns, columns);
     this.columns = columns;
   }
 
@@ -92,7 +92,7 @@ public class ReportOutput extends DBObject {
   }
 
   public void setSubColumns(List<ReportOutColumn> subColumns) {
-    collFieldChanged(_SUBCOLUMNS, this.subColumns);
+    collFieldChanged(_SUBCOLUMNS, this.subColumns, subColumns);
     this.subColumns = subColumns;
   }
 
@@ -115,7 +115,7 @@ public class ReportOutput extends DBObject {
   }
 
   public void setAttributes(List<ReportOutAttribute> attributes) {
-    collFieldChanged(_ATTRIBUTES, this.attributes);
+    collFieldChanged(_ATTRIBUTES, this.attributes, attributes);
     this.attributes = attributes;
   }
 
@@ -138,7 +138,7 @@ public class ReportOutput extends DBObject {
   }
 
   public void setRows(List<ReportOutRow> rows) {
-    collFieldChanged(_ROWS, this.rows);
+    collFieldChanged(_ROWS, this.rows, rows);
     this.rows = rows;
   }
 

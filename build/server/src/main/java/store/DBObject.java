@@ -57,6 +57,10 @@ public abstract class DBObject {
 		return false;
 	}
 	
+	public void fieldChanged(int field, Object oldValue) {
+		fieldChanged(field, oldValue, null);
+	}
+	
 	public void fieldChanged(int field, Object oldValue, Object newValue) {
 		if(inProxy || isOld()) {
 			return;
@@ -64,6 +68,7 @@ public abstract class DBObject {
 		Object _old = _changes.oldValues.get(field);
 		if (_old != null && Objects.equals(newValue, _old)) {
 			// Discard
+			this._changes.unset(field);
 			onPropertyUnset();
 			return;
 		}

@@ -39,7 +39,7 @@ public class LoginResult extends DBObject {
   }
 
   public void setSuccess(boolean success) {
-    fieldChanged(_SUCCESS, this.success);
+    fieldChanged(_SUCCESS, this.success, success);
     this.success = success;
   }
 
@@ -52,12 +52,12 @@ public class LoginResult extends DBObject {
   }
 
   public void setUserObject(User userObject) {
-    fieldChanged(_USEROBJECT, this.userObject);
+    fieldChanged(_USEROBJECT, this.userObject, userObject);
     this.userObject = userObject;
   }
 
   public void setUserObjectRef(TypeAndId userObjectRef) {
-    fieldChanged(_USEROBJECT, this.userObjectRef);
+    fieldChanged(_USEROBJECT, this.userObjectRef, userObjectRef);
     this.userObjectRef = userObjectRef;
   }
 
@@ -66,7 +66,7 @@ public class LoginResult extends DBObject {
   }
 
   public void setToken(String token) {
-    fieldChanged(_TOKEN, this.token);
+    fieldChanged(_TOKEN, this.token, token);
     this.token = token;
   }
 
@@ -75,7 +75,7 @@ public class LoginResult extends DBObject {
   }
 
   public void setFailureMessage(String failureMessage) {
-    fieldChanged(_FAILUREMESSAGE, this.failureMessage);
+    fieldChanged(_FAILUREMESSAGE, this.failureMessage, failureMessage);
     this.failureMessage = failureMessage;
   }
 

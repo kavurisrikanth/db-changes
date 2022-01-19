@@ -30,7 +30,7 @@ public class ReportOutOption extends DBObject {
   }
 
   public void setKey(String key) {
-    fieldChanged(_KEY, this.key);
+    fieldChanged(_KEY, this.key, key);
     this.key = key;
   }
 
@@ -39,7 +39,7 @@ public class ReportOutOption extends DBObject {
   }
 
   public void setValue(String value) {
-    fieldChanged(_VALUE, this.value);
+    fieldChanged(_VALUE, this.value, value);
     this.value = value;
   }
 

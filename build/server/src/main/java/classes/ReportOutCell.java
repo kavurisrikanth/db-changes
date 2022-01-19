@@ -38,7 +38,7 @@ public class ReportOutCell extends DBObject {
   }
 
   public void setKey(String key) {
-    fieldChanged(_KEY, this.key);
+    fieldChanged(_KEY, this.key, key);
     this.key = key;
   }
 
@@ -47,7 +47,7 @@ public class ReportOutCell extends DBObject {
   }
 
   public void setType(String type) {
-    fieldChanged(_TYPE, this.type);
+    fieldChanged(_TYPE, this.type, type);
     this.type = type;
   }
 
@@ -56,7 +56,7 @@ public class ReportOutCell extends DBObject {
   }
 
   public void setValue(String value) {
-    fieldChanged(_VALUE, this.value);
+    fieldChanged(_VALUE, this.value, value);
     this.value = value;
   }
 
@@ -65,7 +65,7 @@ public class ReportOutCell extends DBObject {
   }
 
   public void setAttributes(List<ReportOutAttribute> attributes) {
-    collFieldChanged(_ATTRIBUTES, this.attributes);
+    collFieldChanged(_ATTRIBUTES, this.attributes, attributes);
     this.attributes = attributes;
   }
 

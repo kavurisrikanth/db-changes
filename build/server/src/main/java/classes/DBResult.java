@@ -32,7 +32,7 @@ public class DBResult extends DBObject {
   }
 
   public void setStatus(DBResultStatus status) {
-    fieldChanged(_STATUS, this.status);
+    fieldChanged(_STATUS, this.status, status);
     this.status = status;
   }
 
@@ -41,7 +41,7 @@ public class DBResult extends DBObject {
   }
 
   public void setErrors(List<String> errors) {
-    collFieldChanged(_ERRORS, this.errors);
+    collFieldChanged(_ERRORS, this.errors, errors);
     this.errors = errors;
   }
 
