@@ -107,12 +107,32 @@ public class DBChange {
 	}
 
 	public void onChildFieldChange(int _childIdx, boolean set) {
-		// TODO Auto-generated method stub
-		
+		if (set) {
+			// Set the bit, but this does not need an oldValue
+			changes.set(_childIdx);
+		} else {
+			// If there is an oldValue, then that means a set operation was performed on the master object for the child field.
+			// So, that cannot be cleared simply because a field in the child changed.
+			// So we do nothing in that case
+			if (!oldValues.containsKey(_childIdx)) {
+				changes.clear(_childIdx);
+			}
+		}
 	}
 
 	public void onChildCollFieldChange(int _childIdx, boolean set) {
 		// TODO Auto-generated method stub
-		
+		if (set) {
+			// Same as for single child
+			changes.set(_childIdx);
+		} else {
+			Object old = oldValues.get(_childIdx);
+			if (old == null) {
+				// If there is no oldValue, then we can unset because the list structure was not changed
+				changes.clear(_childIdx);
+				return;
+			}
+			// TODO: Any other case?
+		}
 	}
 }
