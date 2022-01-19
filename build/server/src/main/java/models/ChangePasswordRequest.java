@@ -51,7 +51,7 @@ public class ChangePasswordRequest extends CreatableObject {
     if (Objects.equals(this.newPassword, newPassword)) {
       return;
     }
-    fieldChanged(_NEWPASSWORD, this.newPassword);
+    fieldChanged(_NEWPASSWORD, this.newPassword, newPassword);
     this.newPassword = newPassword;
   }
 

@@ -62,13 +62,15 @@ public abstract class DBObject {
 			return;
 		}
 		Object _old = _changes.oldValues.get(field);
+		if (_old != null && Objects.equals(newValue, _old)) {
+			// Discard
+			onPropertyUnset();
+			return;
+		}
 		if (_old == null) {
 			this._changes.set(field, oldValue);
-			onPropertySet(false);
-		} else if (Objects.equals(newValue, _old)) {
-			_changes.unset(field);
-			onPropertyUnset();
 		}
+		onPropertySet(false);
 	}
 	
 	public void collFieldChanged(int field, Object oldValue) {
@@ -128,7 +130,8 @@ public abstract class DBObject {
 		if (_master == null) {
 			return;
 		}
-		_master._handleChildChange(this._childIdx, set, this);
+//		_master._handleChildChange(this._childIdx, set, this);
+		_master._handleChildChange(this._childIdx);
 	}
 	
 	public void _setChildIdx(int childIdx) {

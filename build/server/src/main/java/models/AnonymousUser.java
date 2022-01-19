@@ -66,7 +66,7 @@ public class AnonymousUser extends User {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
-    super._handleChildChange(_childIdx, set, trigger);
+  protected void _handleChildChange(int _childIdx) {
+    super._handleChildChange(_childIdx);
   }
 }

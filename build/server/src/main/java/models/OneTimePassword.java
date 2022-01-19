@@ -79,7 +79,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.input, input)) {
       return;
     }
-    fieldChanged(_INPUT, this.input);
+    fieldChanged(_INPUT, this.input, input);
     this.input = input;
   }
 
@@ -93,7 +93,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.inputType, inputType)) {
       return;
     }
-    fieldChanged(_INPUTTYPE, this.inputType);
+    fieldChanged(_INPUTTYPE, this.inputType, inputType);
     this.inputType = inputType;
   }
 
@@ -107,7 +107,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.userType, userType)) {
       return;
     }
-    fieldChanged(_USERTYPE, this.userType);
+    fieldChanged(_USERTYPE, this.userType, userType);
     this.userType = userType;
   }
 
@@ -121,7 +121,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.success, success)) {
       return;
     }
-    fieldChanged(_SUCCESS, this.success);
+    fieldChanged(_SUCCESS, this.success, success);
     this.success = success;
   }
 
@@ -135,7 +135,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.errorMsg, errorMsg)) {
       return;
     }
-    fieldChanged(_ERRORMSG, this.errorMsg);
+    fieldChanged(_ERRORMSG, this.errorMsg, errorMsg);
     this.errorMsg = errorMsg;
   }
 
@@ -149,7 +149,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.token, token)) {
       return;
     }
-    fieldChanged(_TOKEN, this.token);
+    fieldChanged(_TOKEN, this.token, token);
     this.token = token;
   }
 
@@ -163,7 +163,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.code, code)) {
       return;
     }
-    fieldChanged(_CODE, this.code);
+    fieldChanged(_CODE, this.code, code);
     this.code = code;
   }
 
@@ -177,7 +177,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.user, user)) {
       return;
     }
-    fieldChanged(_USER, this.user);
+    fieldChanged(_USER, this.user, user);
     this.user = user;
   }
 
@@ -191,7 +191,7 @@ public class OneTimePassword extends CreatableObject {
     if (Objects.equals(this.expiry, expiry)) {
       return;
     }
-    fieldChanged(_EXPIRY, this.expiry);
+    fieldChanged(_EXPIRY, this.expiry, expiry);
     this.expiry = expiry;
   }
 

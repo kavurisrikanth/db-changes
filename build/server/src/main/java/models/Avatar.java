@@ -67,7 +67,7 @@ public class Avatar extends DatabaseObject {
     if (Objects.equals(this.image, image)) {
       return;
     }
-    fieldChanged(_IMAGE, this.image);
+    fieldChanged(_IMAGE, this.image, image);
     if (image == null) {
       image = new D3EImage();
     }
@@ -86,7 +86,7 @@ public class Avatar extends DatabaseObject {
     if (Objects.equals(this.createFrom, createFrom)) {
       return;
     }
-    fieldChanged(_CREATEFROM, this.createFrom);
+    fieldChanged(_CREATEFROM, this.createFrom, createFrom);
     this.createFrom = createFrom;
   }
 
@@ -153,7 +153,7 @@ public class Avatar extends DatabaseObject {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
+  protected void _handleChildChange(int _childIdx) {
     switch (_childIdx) {
       case _IMAGE:
         {

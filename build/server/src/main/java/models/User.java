@@ -59,7 +59,7 @@ public abstract class User extends CreatableObject {
     if (Objects.equals(this.isActive, isActive)) {
       return;
     }
-    fieldChanged(_ISACTIVE, this.isActive);
+    fieldChanged(_ISACTIVE, this.isActive, isActive);
     this.isActive = isActive;
   }
 
@@ -73,7 +73,7 @@ public abstract class User extends CreatableObject {
     if (Objects.equals(this.deviceToken, deviceToken)) {
       return;
     }
-    fieldChanged(_DEVICETOKEN, this.deviceToken);
+    fieldChanged(_DEVICETOKEN, this.deviceToken, deviceToken);
     this.deviceToken = deviceToken;
   }
 

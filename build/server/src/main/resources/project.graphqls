@@ -379,6 +379,7 @@ type Thing
 {
 	id : Long
 	localId : Long
+	msg : String
 	child : ChildModel
 	childColl : [ChildModel]
 }
@@ -386,6 +387,7 @@ type Thing
 input ThingEntityInput
 {
 	id : Long
+	msg : String
 	child : ChildModelEntityInput
 	childColl : [ChildModelEntityInput]
 }

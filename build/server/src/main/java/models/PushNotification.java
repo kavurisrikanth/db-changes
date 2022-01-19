@@ -71,7 +71,7 @@ public class PushNotification extends CreatableObject {
     if (Objects.equals(this.deviceTokens, deviceTokens)) {
       return;
     }
-    collFieldChanged(_DEVICETOKENS, this.deviceTokens);
+    collFieldChanged(_DEVICETOKENS, this.deviceTokens, deviceTokens);
     this.deviceTokens.clear();
     this.deviceTokens.addAll(deviceTokens);
   }
@@ -86,7 +86,7 @@ public class PushNotification extends CreatableObject {
     if (Objects.equals(this.title, title)) {
       return;
     }
-    fieldChanged(_TITLE, this.title);
+    fieldChanged(_TITLE, this.title, title);
     this.title = title;
   }
 
@@ -100,7 +100,7 @@ public class PushNotification extends CreatableObject {
     if (Objects.equals(this.body, body)) {
       return;
     }
-    fieldChanged(_BODY, this.body);
+    fieldChanged(_BODY, this.body, body);
     this.body = body;
   }
 
@@ -114,7 +114,7 @@ public class PushNotification extends CreatableObject {
     if (Objects.equals(this.path, path)) {
       return;
     }
-    fieldChanged(_PATH, this.path);
+    fieldChanged(_PATH, this.path, path);
     this.path = path;
   }
 

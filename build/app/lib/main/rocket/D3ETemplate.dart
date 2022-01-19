@@ -57,7 +57,7 @@ class RPCConstants {
 }
 
 class D3ETemplate {
-  static String HASH = '3b098dc2d46ee9b944b60afa2d098e62';
+  static String HASH = 'd07c3bb4f05f8ac40415578c4383d59b';
   static List<D3EUsage> _usages = [];
   static List<D3ETemplateType> _types = [
     D3ETemplateType('Boolean', '27226c864bac7454a8504f8edb15d95b', []),
@@ -120,11 +120,12 @@ class D3ETemplate {
     D3ETemplateType('String', '27118326006d3829667a400ad23d5d98', []),
     D3ETemplateType(
         'Thing',
-        '84e9abc88f40a1ae744ed7508031aa5e',
+        '3ed4f63c65a1aa4f27f3688791734eb8',
         [
           D3ETemplateField('child', CHILDMODEL, D3EFieldType.Ref, child: true),
           D3ETemplateField('childColl', CHILDMODEL, D3EFieldType.Ref,
-              child: true, collection: true)
+              child: true, collection: true),
+          D3ETemplateField('msg', STRING, D3EFieldType.String)
         ],
         refType: D3ERefType.Model,
         creator: () => Thing()),

@@ -176,7 +176,7 @@ public class ModelSchema extends AbstractModelSchema {
             .trans());
     addTable(
         new DModel<Thing>(
-            "Thing", SchemaConstants.Thing, 2, 0, "_thing", DModelType.MODEL, () -> new Thing()));
+            "Thing", SchemaConstants.Thing, 3, 0, "_thing", DModelType.MODEL, () -> new Thing()));
     addTable(new DModel<User>("User", SchemaConstants.User, 2, 0, "_user", DModelType.MODEL));
     addTable(
         new DModel<UserSession>(

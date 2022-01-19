@@ -23,8 +23,10 @@ import store.ICloneable;
 @SolrDocument(collection = "Thing")
 @Entity
 public class Thing extends CreatableObject {
-  public static final int _CHILD = 0;
-  public static final int _CHILDCOLL = 1;
+  public static final int _MSG = 0;
+  public static final int _CHILD = 1;
+  public static final int _CHILDCOLL = 2;
+  @Field private String msg;
 
   @Field
   @ChildDocument
@@ -53,7 +55,7 @@ public class Thing extends CreatableObject {
 
   @Override
   public int _fieldsCount() {
-    return 2;
+    return 3;
   }
 
   public void addToChildColl(ChildModel val, long index) {
@@ -100,6 +102,20 @@ public class Thing extends CreatableObject {
     }
   }
 
+  public String getMsg() {
+    _checkProxy();
+    return this.msg;
+  }
+
+  public void setMsg(String msg) {
+    _checkProxy();
+    if (Objects.equals(this.msg, msg)) {
+      return;
+    }
+    fieldChanged(_MSG, this.msg, msg);
+    this.msg = msg;
+  }
+
   public ChildModel getChild() {
     _checkProxy();
     return this.child;
@@ -110,7 +126,7 @@ public class Thing extends CreatableObject {
     if (Objects.equals(this.child, child)) {
       return;
     }
-    fieldChanged(_CHILD, this.child);
+    fieldChanged(_CHILD, this.child, child);
     this.child = child;
     if (this.child != null) {
       this.child.setMasterThing(this);
@@ -126,7 +142,7 @@ public class Thing extends CreatableObject {
     if (Objects.equals(this.childColl, childColl)) {
       return;
     }
-    collFieldChanged(_CHILDCOLL, this.childColl);
+    collFieldChanged(_CHILDCOLL, this.childColl, childColl);
     this.childColl.clear();
     this.childColl.addAll(childColl);
     this.childColl.forEach(
@@ -159,6 +175,7 @@ public class Thing extends CreatableObject {
   public void deepCloneIntoObj(ICloneable dbObj, CloneContext ctx) {
     super.deepCloneIntoObj(dbObj, ctx);
     Thing _obj = ((Thing) dbObj);
+    _obj.setMsg(msg);
     ctx.cloneChild(child, (v) -> _obj.setChild(v));
     ctx.cloneChildList(childColl, (v) -> _obj.setChildColl(v));
   }
@@ -168,6 +185,7 @@ public class Thing extends CreatableObject {
       cloneObj = new Thing();
     }
     super.cloneInstance(cloneObj);
+    cloneObj.setMsg(this.getMsg());
     cloneObj.setChild(this.getChild() == null ? null : this.getChild().cloneInstance(null));
     cloneObj.setChildColl(
         this.getChildColl().stream()
@@ -192,7 +210,7 @@ public class Thing extends CreatableObject {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
+  protected void _handleChildChange(int _childIdx) {
     switch (_childIdx) {
       case _CHILD:
         {

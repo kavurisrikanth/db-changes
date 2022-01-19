@@ -1,10 +1,13 @@
 class ThingUtil {
     static void handleThing(Thing thing) {
         // Make changes
-        Integer num = thing.child.num;
-        thing.child.num = num + 1;
+        // Integer num = thing.child.num;
+        // thing.child.num = num + 1;
+        String msg = thing.msg;
+        thing.msg = 'World';
 
         // Revert
-        thing.child.num = num;
+        // thing.child.num = num;
+        thing.msg = msg;
     }
 }

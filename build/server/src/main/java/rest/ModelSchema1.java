@@ -385,6 +385,13 @@ public class ModelSchema1 {
 
   private void addThingFields() {
     DModel<Thing> m = getType2("Thing");
+    m.addPrimitive(
+        "msg",
+        Thing._MSG,
+        "_msg",
+        FieldPrimitiveType.String,
+        (s) -> s.getMsg(),
+        (s, v) -> s.setMsg(v));
     m.addReference(
         "child",
         Thing._CHILD,

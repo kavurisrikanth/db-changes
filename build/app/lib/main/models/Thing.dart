@@ -8,14 +8,18 @@ import 'ChildModel.dart';
 class Thing extends DBObject {
   static const int _CHILD = 0;
   static const int _CHILDCOLL = 1;
+  static const int _MSG = 2;
   int id = 0;
   DBObject otherMaster;
+  String _msg = '';
   ChildModel _child;
   List<ChildModel> _childColl = [];
-  Thing({ChildModel child, List<ChildModel> childColl}) {
+  Thing({ChildModel child, List<ChildModel> childColl, String msg}) {
     this.setChild(child ?? null);
 
     this.setChildColl(childColl ?? []);
+
+    this.setMsg(msg ?? '');
   }
   String get d3eType {
     return 'Thing';
@@ -23,6 +27,24 @@ class Thing extends DBObject {
 
   void clear() {
     this.d3eChanges.clear();
+  }
+
+  String get msg {
+    return _msg;
+  }
+
+  void setMsg(String val) {
+    bool isValChanged = _msg != val;
+
+    if (!isValChanged) {
+      return;
+    }
+
+    this.updateD3EChanges(_MSG, _msg);
+
+    _msg = val;
+
+    fire('msg', this);
   }
 
   ChildModel get child {
@@ -145,6 +167,11 @@ class Thing extends DBObject {
 
   Object get(int field) {
     switch (field) {
+      case _MSG:
+        {
+          return this._msg;
+        }
+
       case _CHILD:
         {
           return this._child;
@@ -194,6 +221,8 @@ TODO: Might be removed
 
     obj.id = id;
 
+    obj.setMsg(_msg);
+
     ctx.cloneChild(_child, (v) => obj.setChild(v));
 
     ctx.cloneChildList(_childColl, (v) => obj.setChildColl(v));
@@ -209,6 +238,12 @@ TODO: Might be removed
 
   void set(int field, Object value) {
     switch (field) {
+      case _MSG:
+        {
+          this.setMsg((value as String));
+          break;
+        }
+
       case _CHILD:
         {
           this.setChild((value as ChildModel));

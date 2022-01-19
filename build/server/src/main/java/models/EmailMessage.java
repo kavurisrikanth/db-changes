@@ -118,7 +118,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.bcc, bcc)) {
       return;
     }
-    collFieldChanged(_BCC, this.bcc);
+    collFieldChanged(_BCC, this.bcc, bcc);
     this.bcc.clear();
     this.bcc.addAll(bcc);
   }
@@ -131,7 +131,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.cc, cc)) {
       return;
     }
-    collFieldChanged(_CC, this.cc);
+    collFieldChanged(_CC, this.cc, cc);
     this.cc.clear();
     this.cc.addAll(cc);
   }
@@ -146,7 +146,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.subject, subject)) {
       return;
     }
-    fieldChanged(_SUBJECT, this.subject);
+    fieldChanged(_SUBJECT, this.subject, subject);
     this.subject = subject;
   }
 
@@ -160,7 +160,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.html, html)) {
       return;
     }
-    fieldChanged(_HTML, this.html);
+    fieldChanged(_HTML, this.html, html);
     this.html = html;
   }
 
@@ -172,7 +172,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.inlineAttachments, inlineAttachments)) {
       return;
     }
-    collFieldChanged(_INLINEATTACHMENTS, this.inlineAttachments);
+    collFieldChanged(_INLINEATTACHMENTS, this.inlineAttachments, inlineAttachments);
     this.inlineAttachments.clear();
     this.inlineAttachments.addAll(inlineAttachments);
   }
@@ -185,7 +185,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.attachments, attachments)) {
       return;
     }
-    collFieldChanged(_ATTACHMENTS, this.attachments);
+    collFieldChanged(_ATTACHMENTS, this.attachments, attachments);
     this.attachments.clear();
     this.attachments.addAll(attachments);
   }
@@ -240,7 +240,7 @@ public class EmailMessage extends D3EMessage {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
-    super._handleChildChange(_childIdx, set, trigger);
+  protected void _handleChildChange(int _childIdx) {
+    super._handleChildChange(_childIdx);
   }
 }

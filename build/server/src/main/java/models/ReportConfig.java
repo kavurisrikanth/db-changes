@@ -97,7 +97,7 @@ public class ReportConfig extends DatabaseObject {
     if (Objects.equals(this.identity, identity)) {
       return;
     }
-    fieldChanged(_IDENTITY, this.identity);
+    fieldChanged(_IDENTITY, this.identity, identity);
     this.identity = identity;
   }
 
@@ -109,7 +109,7 @@ public class ReportConfig extends DatabaseObject {
     if (Objects.equals(this.values, values)) {
       return;
     }
-    collFieldChanged(_VALUES, this.values);
+    collFieldChanged(_VALUES, this.values, values);
     this.values.clear();
     this.values.addAll(values);
     this.values.forEach(
@@ -190,7 +190,7 @@ public class ReportConfig extends DatabaseObject {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
+  protected void _handleChildChange(int _childIdx) {
     switch (_childIdx) {
       case _VALUES:
         {

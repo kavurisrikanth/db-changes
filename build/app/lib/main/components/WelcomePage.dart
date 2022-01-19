@@ -157,6 +157,7 @@ Your code here.
 */
 
     this.setThing(Thing(
+        msg: 'Hello',
         child: ChildModel(num: 1),
         childColl: [ChildModel(num: 2), ChildModel(num: 3)]));
   }

@@ -50,7 +50,7 @@ public class SMSMessage extends D3EMessage {
     if (Objects.equals(this.dltTemplateId, dltTemplateId)) {
       return;
     }
-    fieldChanged(_DLTTEMPLATEID, this.dltTemplateId);
+    fieldChanged(_DLTTEMPLATEID, this.dltTemplateId, dltTemplateId);
     this.dltTemplateId = dltTemplateId;
   }
 
@@ -88,7 +88,7 @@ public class SMSMessage extends D3EMessage {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx, boolean set, DBObject trigger) {
-    super._handleChildChange(_childIdx, set, trigger);
+  protected void _handleChildChange(int _childIdx) {
+    super._handleChildChange(_childIdx);
   }
 }

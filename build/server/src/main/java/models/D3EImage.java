@@ -69,7 +69,7 @@ public class D3EImage extends DBObject implements ICloneable {
     if (Objects.equals(this.size, size)) {
       return;
     }
-    fieldChanged(_SIZE, this.size);
+    fieldChanged(_SIZE, this.size, size);
     this.size = size;
   }
 
@@ -83,7 +83,7 @@ public class D3EImage extends DBObject implements ICloneable {
     if (Objects.equals(this.width, width)) {
       return;
     }
-    fieldChanged(_WIDTH, this.width);
+    fieldChanged(_WIDTH, this.width, width);
     this.width = width;
   }
 
@@ -97,7 +97,7 @@ public class D3EImage extends DBObject implements ICloneable {
     if (Objects.equals(this.height, height)) {
       return;
     }
-    fieldChanged(_HEIGHT, this.height);
+    fieldChanged(_HEIGHT, this.height, height);
     this.height = height;
   }
 
@@ -111,7 +111,7 @@ public class D3EImage extends DBObject implements ICloneable {
     if (Objects.equals(this.file, file)) {
       return;
     }
-    fieldChanged(_FILE, this.file);
+    fieldChanged(_FILE, this.file, file);
     this.file = file;
   }
 

@@ -3,6 +3,13 @@
     path 'Model'
     package 'changestest'
     properties [
+        (msg {
+            name 'msg'
+            type ({
+                primitive String
+            })
+            group #general
+        })
         (child {
             name 'child'
             type (ChildModel {

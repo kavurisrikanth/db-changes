@@ -72,7 +72,7 @@ public class ReportConfigOption extends DatabaseObject {
     if (Objects.equals(this.identity, identity)) {
       return;
     }
-    fieldChanged(_IDENTITY, this.identity);
+    fieldChanged(_IDENTITY, this.identity, identity);
     this.identity = identity;
   }
 
@@ -86,7 +86,7 @@ public class ReportConfigOption extends DatabaseObject {
     if (Objects.equals(this.value, value)) {
       return;
     }
-    fieldChanged(_VALUE, this.value);
+    fieldChanged(_VALUE, this.value, value);
     this.value = value;
   }
 

@@ -55,7 +55,7 @@ public abstract class UserSession extends CreatableObject {
     if (Objects.equals(this.userSessionId, userSessionId)) {
       return;
     }
-    fieldChanged(_USERSESSIONID, this.userSessionId);
+    fieldChanged(_USERSESSIONID, this.userSessionId, userSessionId);
     this.userSessionId = userSessionId;
   }
 

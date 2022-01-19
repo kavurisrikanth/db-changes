@@ -74,7 +74,7 @@ public abstract class D3EMessage extends CreatableObject {
     if (Objects.equals(this.from, from)) {
       return;
     }
-    fieldChanged(_FROM, this.from);
+    fieldChanged(_FROM, this.from, from);
     this.from = from;
   }
 
@@ -86,7 +86,7 @@ public abstract class D3EMessage extends CreatableObject {
     if (Objects.equals(this.to, to)) {
       return;
     }
-    collFieldChanged(_TO, this.to);
+    collFieldChanged(_TO, this.to, to);
     this.to.clear();
     this.to.addAll(to);
   }
@@ -101,7 +101,7 @@ public abstract class D3EMessage extends CreatableObject {
     if (Objects.equals(this.body, body)) {
       return;
     }
-    fieldChanged(_BODY, this.body);
+    fieldChanged(_BODY, this.body, body);
     this.body = body;
   }
 
@@ -115,7 +115,7 @@ public abstract class D3EMessage extends CreatableObject {
     if (Objects.equals(this.createdOn, createdOn)) {
       return;
     }
-    fieldChanged(_CREATEDON, this.createdOn);
+    fieldChanged(_CREATEDON, this.createdOn, createdOn);
     this.createdOn = createdOn;
   }
 

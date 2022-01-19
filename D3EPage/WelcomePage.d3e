@@ -49,6 +49,7 @@
             block ```
                 /* Your code here. */
                 this.thing = Thing(
+                    msg: 'Hello',
                     child: ChildModel(
                         num: 1
                     ),

@@ -168,9 +168,10 @@ public class D3EPersistanceList<E> extends ArrayList<E> {
 	@Override
 	public void clear() {
 		_checkProxy();
-		super.clear();
-		_fieldChanged();
-
+		if (!this.isEmpty()) {
+			super.clear();
+			_fieldChanged();			
+		}
 	}
 
 	@Override

@@ -69,7 +69,7 @@ public class ChildModel extends DatabaseObject {
     if (Objects.equals(this.num, num)) {
       return;
     }
-    fieldChanged(_NUM, this.num);
+    fieldChanged(_NUM, this.num, num);
     this.num = num;
   }
 

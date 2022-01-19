@@ -1,6 +1,5 @@
 package classes;
 
-import models.ChildModel;
 import models.Thing;
 
 public class ThingUtil {
@@ -9,12 +8,15 @@ public class ThingUtil {
   public static void handleThing(Thing thing) {
     /*
      Make changes
+     Integer num = thing.child.num;
+     thing.child.num = num + 1;
     */
-    long num = thing.getChild().getNum();
-    thing.getChild().setNum(num + 1l);
+    String msg = thing.getMsg();
+    thing.setMsg("World");
     /*
      Revert
+     thing.child.num = num;
     */
-    thing.getChild().setNum(num);
+    thing.setMsg(msg);
   }
 }
