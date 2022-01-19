@@ -1,5 +1,9 @@
 class ThingUtil {
     static void handleThing(Thing thing) {
-        // TODO
+        // Make changes
+        thing.child.num++;
+
+        // Revert
+        thing.child.num--;
     }
 }
