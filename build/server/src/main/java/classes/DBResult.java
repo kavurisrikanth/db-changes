@@ -46,7 +46,6 @@ public class DBResult extends DBObject {
   }
 
   public void addToErrors(String val, long index) {
-    collFieldChanged(_ERRORS, this.errors);
     if (index == -1) {
       this.errors.add(val);
     } else {
@@ -55,7 +54,6 @@ public class DBResult extends DBObject {
   }
 
   public void removeFromErrors(String val) {
-    collFieldChanged(_ERRORS, this.errors);
     this.errors.remove(val);
   }
 

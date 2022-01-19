@@ -61,7 +61,6 @@ public class ReportOutRow extends DBObject {
   }
 
   public void addToCells(ReportOutCell val, long index) {
-    collFieldChanged(_CELLS, this.cells);
     if (index == -1) {
       this.cells.add(val);
     } else {
@@ -70,7 +69,6 @@ public class ReportOutRow extends DBObject {
   }
 
   public void removeFromCells(ReportOutCell val) {
-    collFieldChanged(_CELLS, this.cells);
     this.cells.remove(val);
   }
 

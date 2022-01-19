@@ -53,7 +53,6 @@ public class ReportConfig extends DatabaseObject {
   }
 
   public void addToValues(ReportConfigOption val, long index) {
-    addedToCollField(_VALUES, this.values, val, index);
     val.setMasterReportConfig(this);
     val._setChildIdx(_VALUES);
     if (index == -1) {
@@ -64,7 +63,6 @@ public class ReportConfig extends DatabaseObject {
   }
 
   public void removeFromValues(ReportConfigOption val) {
-    removedFromCollField(_VALUES, this.values, val);
     val._clearChildIdx();
     this.values.remove(val);
   }
@@ -109,9 +107,7 @@ public class ReportConfig extends DatabaseObject {
     if (Objects.equals(this.values, values)) {
       return;
     }
-    collFieldChanged(_VALUES, this.values, values);
-    this.values.clear();
-    this.values.addAll(values);
+    ((D3EPersistanceList<ReportConfigOption>) this.values).setAll(values);
     this.values.forEach(
         (one) -> {
           one.setMasterReportConfig(this);

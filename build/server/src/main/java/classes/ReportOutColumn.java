@@ -58,7 +58,6 @@ public class ReportOutColumn extends DBObject {
   }
 
   public void addToAttributes(ReportOutAttribute val, long index) {
-    collFieldChanged(_ATTRIBUTES, this.attributes);
     if (index == -1) {
       this.attributes.add(val);
     } else {
@@ -67,7 +66,6 @@ public class ReportOutColumn extends DBObject {
   }
 
   public void removeFromAttributes(ReportOutAttribute val) {
-    collFieldChanged(_ATTRIBUTES, this.attributes);
     this.attributes.remove(val);
   }
 

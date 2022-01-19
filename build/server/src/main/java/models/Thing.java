@@ -63,7 +63,6 @@ public class Thing extends CreatableObject {
   }
 
   public void addToNums(long val, long index) {
-//    addedToCollField(_NUMS, this.nums, val, index);
     if (index == -1) {
       this.nums.add(val);
     } else {
@@ -72,12 +71,10 @@ public class Thing extends CreatableObject {
   }
 
   public void removeFromNums(long val) {
-    removedFromCollField(_NUMS, this.nums, val);
     this.nums.remove(val);
   }
 
   public void addToChildColl(ChildModel val, long index) {
-    addedToCollField(_CHILDCOLL, this.childColl, val, index);
     val.setMasterThing(this);
     val._setChildIdx(_CHILDCOLL);
     if (index == -1) {
@@ -88,7 +85,6 @@ public class Thing extends CreatableObject {
   }
 
   public void removeFromChildColl(ChildModel val) {
-    removedFromCollField(_CHILDCOLL, this.childColl, val);
     val._clearChildIdx();
     this.childColl.remove(val);
   }
@@ -142,11 +138,6 @@ public class Thing extends CreatableObject {
     if (Objects.equals(this.nums, nums)) {
       return;
     }
-//    collFieldChanged(_NUMS, this.nums, nums);
-    
-//    this.nums.clear();
-//    this.nums.addAll(nums);
-    
     ((D3EPersistanceList<Long>) this.nums).setAll(nums);
   }
 
@@ -176,9 +167,7 @@ public class Thing extends CreatableObject {
     if (Objects.equals(this.childColl, childColl)) {
       return;
     }
-    collFieldChanged(_CHILDCOLL, this.childColl, childColl);
-    this.childColl.clear();
-    this.childColl.addAll(childColl);
+    ((D3EPersistanceList<ChildModel>) this.childColl).setAll(childColl);
     this.childColl.forEach(
         (one) -> {
           one.setMasterThing(this);

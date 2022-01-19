@@ -47,7 +47,6 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void addToBcc(String val, long index) {
-    addedToCollField(_BCC, this.bcc, val, index);
     if (index == -1) {
       this.bcc.add(val);
     } else {
@@ -56,12 +55,10 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromBcc(String val) {
-    removedFromCollField(_BCC, this.bcc, val);
     this.bcc.remove(val);
   }
 
   public void addToCc(String val, long index) {
-    addedToCollField(_CC, this.cc, val, index);
     if (index == -1) {
       this.cc.add(val);
     } else {
@@ -70,12 +67,10 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromCc(String val) {
-    removedFromCollField(_CC, this.cc, val);
     this.cc.remove(val);
   }
 
   public void addToInlineAttachments(DFile val, long index) {
-    addedToCollField(_INLINEATTACHMENTS, this.inlineAttachments, val, index);
     if (index == -1) {
       this.inlineAttachments.add(val);
     } else {
@@ -84,12 +79,10 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromInlineAttachments(DFile val) {
-    removedFromCollField(_INLINEATTACHMENTS, this.inlineAttachments, val);
     this.inlineAttachments.remove(val);
   }
 
   public void addToAttachments(DFile val, long index) {
-    addedToCollField(_ATTACHMENTS, this.attachments, val, index);
     if (index == -1) {
       this.attachments.add(val);
     } else {
@@ -98,7 +91,6 @@ public class EmailMessage extends D3EMessage {
   }
 
   public void removeFromAttachments(DFile val) {
-    removedFromCollField(_ATTACHMENTS, this.attachments, val);
     this.attachments.remove(val);
   }
 
@@ -118,9 +110,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.bcc, bcc)) {
       return;
     }
-    collFieldChanged(_BCC, this.bcc, bcc);
-    this.bcc.clear();
-    this.bcc.addAll(bcc);
+    ((D3EPersistanceList<String>) this.bcc).setAll(bcc);
   }
 
   public List<String> getCc() {
@@ -131,9 +121,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.cc, cc)) {
       return;
     }
-    collFieldChanged(_CC, this.cc, cc);
-    this.cc.clear();
-    this.cc.addAll(cc);
+    ((D3EPersistanceList<String>) this.cc).setAll(cc);
   }
 
   public String getSubject() {
@@ -172,9 +160,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.inlineAttachments, inlineAttachments)) {
       return;
     }
-    collFieldChanged(_INLINEATTACHMENTS, this.inlineAttachments, inlineAttachments);
-    this.inlineAttachments.clear();
-    this.inlineAttachments.addAll(inlineAttachments);
+    ((D3EPersistanceList<DFile>) this.inlineAttachments).setAll(inlineAttachments);
   }
 
   public List<DFile> getAttachments() {
@@ -185,9 +171,7 @@ public class EmailMessage extends D3EMessage {
     if (Objects.equals(this.attachments, attachments)) {
       return;
     }
-    collFieldChanged(_ATTACHMENTS, this.attachments, attachments);
-    this.attachments.clear();
-    this.attachments.addAll(attachments);
+    ((D3EPersistanceList<DFile>) this.attachments).setAll(attachments);
   }
 
   @Override

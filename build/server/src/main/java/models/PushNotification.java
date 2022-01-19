@@ -42,7 +42,6 @@ public class PushNotification extends CreatableObject {
   }
 
   public void addToDeviceTokens(String val, long index) {
-    addedToCollField(_DEVICETOKENS, this.deviceTokens, val, index);
     if (index == -1) {
       this.deviceTokens.add(val);
     } else {
@@ -51,7 +50,6 @@ public class PushNotification extends CreatableObject {
   }
 
   public void removeFromDeviceTokens(String val) {
-    removedFromCollField(_DEVICETOKENS, this.deviceTokens, val);
     this.deviceTokens.remove(val);
   }
 
@@ -71,9 +69,7 @@ public class PushNotification extends CreatableObject {
     if (Objects.equals(this.deviceTokens, deviceTokens)) {
       return;
     }
-    collFieldChanged(_DEVICETOKENS, this.deviceTokens, deviceTokens);
-    this.deviceTokens.clear();
-    this.deviceTokens.addAll(deviceTokens);
+    ((D3EPersistanceList<String>) this.deviceTokens).setAll(deviceTokens);
   }
 
   public String getTitle() {

@@ -43,7 +43,6 @@ public abstract class D3EMessage extends CreatableObject {
   }
 
   public void addToTo(String val, long index) {
-    addedToCollField(_TO, this.to, val, index);
     if (index == -1) {
       this.to.add(val);
     } else {
@@ -52,7 +51,6 @@ public abstract class D3EMessage extends CreatableObject {
   }
 
   public void removeFromTo(String val) {
-    removedFromCollField(_TO, this.to, val);
     this.to.remove(val);
   }
 
@@ -86,9 +84,7 @@ public abstract class D3EMessage extends CreatableObject {
     if (Objects.equals(this.to, to)) {
       return;
     }
-    collFieldChanged(_TO, this.to, to);
-    this.to.clear();
-    this.to.addAll(to);
+    ((D3EPersistanceList<String>) this.to).setAll(to);
   }
 
   public String getBody() {

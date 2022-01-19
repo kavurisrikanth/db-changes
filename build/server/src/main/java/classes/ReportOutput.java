@@ -51,7 +51,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void addToOptions(ReportOutOption val, long index) {
-    collFieldChanged(_OPTIONS, this.options);
     if (index == -1) {
       this.options.add(val);
     } else {
@@ -60,7 +59,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void removeFromOptions(ReportOutOption val) {
-    collFieldChanged(_OPTIONS, this.options);
     this.options.remove(val);
   }
 
@@ -74,7 +72,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void addToColumns(ReportOutColumn val, long index) {
-    collFieldChanged(_COLUMNS, this.columns);
     if (index == -1) {
       this.columns.add(val);
     } else {
@@ -83,7 +80,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void removeFromColumns(ReportOutColumn val) {
-    collFieldChanged(_COLUMNS, this.columns);
     this.columns.remove(val);
   }
 
@@ -97,7 +93,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void addToSubColumns(ReportOutColumn val, long index) {
-    collFieldChanged(_SUBCOLUMNS, this.subColumns);
     if (index == -1) {
       this.subColumns.add(val);
     } else {
@@ -106,7 +101,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void removeFromSubColumns(ReportOutColumn val) {
-    collFieldChanged(_SUBCOLUMNS, this.subColumns);
     this.subColumns.remove(val);
   }
 
@@ -120,7 +114,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void addToAttributes(ReportOutAttribute val, long index) {
-    collFieldChanged(_ATTRIBUTES, this.attributes);
     if (index == -1) {
       this.attributes.add(val);
     } else {
@@ -129,7 +122,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void removeFromAttributes(ReportOutAttribute val) {
-    collFieldChanged(_ATTRIBUTES, this.attributes);
     this.attributes.remove(val);
   }
 
@@ -143,7 +135,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void addToRows(ReportOutRow val, long index) {
-    collFieldChanged(_ROWS, this.rows);
     if (index == -1) {
       this.rows.add(val);
     } else {
@@ -152,7 +143,6 @@ public class ReportOutput extends DBObject {
   }
 
   public void removeFromRows(ReportOutRow val) {
-    collFieldChanged(_ROWS, this.rows);
     this.rows.remove(val);
   }
 
