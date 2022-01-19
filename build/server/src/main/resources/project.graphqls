@@ -78,12 +78,22 @@ type Query
 
 type Mutation
 {
+	createThing ( input: ThingEntityInput ) : MutateThingResult
+	updateThing ( input: ThingEntityInput ) : MutateThingResult
+	deleteThing ( input: Long ) : MutateThingResult
 }
 
 type MutateOneTimePasswordResult
 {
 	status : MutateResultStatus
 	value : OneTimePassword
+	errors : [String]
+}
+
+type MutateThingResult
+{
+	status : MutateResultStatus
+	value : Thing
 	errors : [String]
 }
 

@@ -816,6 +816,88 @@
 		},
 		{
 			"kind": "OBJECT",
+			"name": "Mutation",
+			"description": "",
+			"fields": [
+				{
+					"name": "createThing",
+					"description": "",
+					"args": [
+						{
+							"name": "input",
+							"description": "",
+							"type": {
+								"kind": "INPUT_OBJECT",
+								"name": "ThingEntityInput",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "MutateThingResult",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "updateThing",
+					"description": "",
+					"args": [
+						{
+							"name": "input",
+							"description": "",
+							"type": {
+								"kind": "INPUT_OBJECT",
+								"name": "ThingEntityInput",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "MutateThingResult",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "deleteThing",
+					"description": "",
+					"args": [
+						{
+							"name": "input",
+							"description": "",
+							"type": {
+								"kind": "SCALAR",
+								"name": "Long",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "MutateThingResult",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
 			"name": "MutateOneTimePasswordResult",
 			"description": "",
 			"fields": [
@@ -842,6 +924,65 @@
 					"type": {
 						"kind": "OBJECT",
 						"name": "OneTimePassword",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "errors",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "LIST",
+						"name": null,
+						"ofType": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						}
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"inputFields": null,
+			"interfaces": [
+
+			],
+			"enumValues": null,
+			"possibleTypes": null
+		},
+		{
+			"kind": "OBJECT",
+			"name": "MutateThingResult",
+			"description": "",
+			"fields": [
+				{
+					"name": "status",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "ENUM",
+						"name": "MutateResultStatus",
+						"ofType": null
+					},
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"name": "value",
+					"description": "",
+					"args": [
+
+					],
+					"type": {
+						"kind": "OBJECT",
+						"name": "Thing",
 						"ofType": null
 					},
 					"isDeprecated": false,

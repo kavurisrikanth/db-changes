@@ -68,6 +68,7 @@ public abstract class DBObject {
 		Object _old = _changes.oldValues.get(field);
 		if (_old != null && Objects.equals(newValue, _old)) {
 			// Discard
+			System.err.println("*** No changes detected in field \"" + field + "\" in type \"" + _type() + "\"");
 			this._changes.unset(field);
 			onPropertyUnset();
 			return;

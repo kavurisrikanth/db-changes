@@ -14,6 +14,7 @@ import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import repository.jpa.AnonymousUserRepository;
 import repository.jpa.OneTimePasswordRepository;
 import security.AppSessionProvider;
 import security.JwtTokenUtil;
@@ -26,6 +27,7 @@ public class RocketQuery extends AbstractRocketQuery {
   @Autowired private PasswordEncoder passwordEncoder;
   @Autowired private ObjectFactory<AppSessionProvider> provider;
   @Autowired private JwtTokenUtil jwtTokenUtil;
+  @Autowired private AnonymousUserRepository anonymousUserRepository;
   @Autowired private OneTimePasswordRepository oneTimePasswordRepository;
   @Autowired private DataChangeTracker dataChangeTracker;
 
@@ -95,6 +97,10 @@ public class RocketQuery extends AbstractRocketQuery {
             return singleResult("Thing", false, one, tracker);
           }
           return singleResult("Thing", false, one);
+        }
+      case "currentAnonymousUser":
+        {
+          return singleResult("AnonymousUser", false, provider.getObject().getAnonymousUser());
         }
     }
     D3ELogger.info("Query Not found");

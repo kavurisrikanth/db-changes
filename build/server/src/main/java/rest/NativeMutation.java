@@ -1,14 +1,21 @@
 package rest;
 
 import classes.MutateResultStatus;
+import d3e.core.CloneContext;
+import d3e.core.CurrentUser;
 import d3e.core.D3ELogger;
+import d3e.core.ListExt;
 import d3e.core.TransactionWrapper;
 import gqltosql.schema.GraphQLDataFetcher;
 import gqltosql.schema.IModelSchema;
 import graphql.language.Field;
+import helpers.ThingEntityHelper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import models.AnonymousUser;
+import models.Thing;
+import models.User;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -123,9 +130,70 @@ public class NativeMutation extends AbstractQueryService {
             variables);
     D3ELogger.displayGraphQL(field.getName(), query, variables);
     switch (field.getName()) {
+      case "createThing":
+        {
+          return createSuccessResult(createThing(ctx), field, "Thing");
+        }
+      case "updateThing":
+        {
+          return createSuccessResult(updateThing(ctx), field, "Thing");
+        }
+      case "deleteThing":
+        {
+          deleteThing(ctx);
+          return createSuccessResult(null, field, "Thing");
+        }
     }
     D3ELogger.info("Mutation Not found");
     return null;
+  }
+
+  private Thing createThing(GraphQLInputContext ctx) throws Exception {
+    User currentUser = CurrentUser.get();
+    if (!(currentUser instanceof AnonymousUser)) {
+      throw new ValidationFailedException(
+          MutateResultStatus.AuthFail,
+          ListExt.asList("Current user type does not have create permissions for this model."));
+    }
+    Thing newThing = ctx.readChild("input", "Thing");
+    this.mutator.save(newThing, false);
+    return newThing;
+  }
+
+  private Thing updateThing(GraphQLInputContext ctx) throws Exception {
+    User currentUser = CurrentUser.get();
+    if (!(currentUser instanceof AnonymousUser)) {
+      throw new ValidationFailedException(
+          MutateResultStatus.AuthFail,
+          ListExt.asList("Current user type does not have update permissions for this model."));
+    }
+    ThingEntityHelper thingHelper = this.mutator.getHelper("Thing");
+    Thing currentThing = thingRepository.findById(ctx.readLong("input", "id"));
+    if (currentThing == null) {
+      throw new ValidationFailedException(
+          MutateResultStatus.BadRequest, ListExt.asList("Invalid ID."));
+    }
+    currentThing.recordOld(CloneContext.forCloneable(currentThing, false));
+    Thing newThing = ctx.readChild("input", "Thing");
+    this.mutator.update(newThing, false);
+    return newThing;
+  }
+
+  private void deleteThing(GraphQLInputContext ctx) throws Exception {
+    User currentUser = CurrentUser.get();
+    if (!(currentUser instanceof AnonymousUser)) {
+      throw new ValidationFailedException(
+          MutateResultStatus.AuthFail,
+          ListExt.asList("Current user type does not have delete permissions for this model."));
+    }
+    long gqlInputId = ctx.readLong("input");
+    ThingEntityHelper thingHelper = this.mutator.getHelper("Thing");
+    Thing currentThing = thingRepository.findById(gqlInputId);
+    if (currentThing == null) {
+      throw new ValidationFailedException(
+          MutateResultStatus.BadRequest, ListExt.asList("Invalid ID"));
+    }
+    this.mutator.delete(currentThing, false);
   }
 
   private String generateToken() {

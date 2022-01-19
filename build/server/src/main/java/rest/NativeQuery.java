@@ -1,7 +1,9 @@
 package rest;
 
+import classes.MutateResultStatus;
 import d3e.core.CurrentUser;
 import d3e.core.D3ELogger;
+import d3e.core.ListExt;
 import gqltosql.GqlToSql;
 import gqltosql.schema.IModelSchema;
 import graphql.language.Field;
@@ -9,6 +11,7 @@ import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import models.AnonymousUser;
 import models.OneTimePassword;
 import models.User;
 import org.apache.commons.io.IOUtils;
@@ -111,18 +114,38 @@ public class NativeQuery extends AbstractQueryService {
         }
       case "getAnonymousUserById":
         {
+          if (currentUser instanceof AnonymousUser) {
+            throw new ValidationFailedException(
+                MutateResultStatus.AuthFail,
+                ListExt.asList("Current user does not have read permissions for this model."));
+          }
           return gqlToSql.execute("AnonymousUser", field, ctx.readLong("id"));
         }
       case "getOneTimePasswordById":
         {
+          if (currentUser instanceof AnonymousUser) {
+            throw new ValidationFailedException(
+                MutateResultStatus.AuthFail,
+                ListExt.asList("Current user does not have read permissions for this model."));
+          }
           return gqlToSql.execute("OneTimePassword", field, ctx.readLong("id"));
         }
       case "getRefModelById":
         {
+          if (currentUser instanceof AnonymousUser) {
+            throw new ValidationFailedException(
+                MutateResultStatus.AuthFail,
+                ListExt.asList("Current user does not have read permissions for this model."));
+          }
           return gqlToSql.execute("RefModel", field, ctx.readLong("id"));
         }
       case "getThingById":
         {
+          if (currentUser instanceof AnonymousUser) {
+            throw new ValidationFailedException(
+                MutateResultStatus.AuthFail,
+                ListExt.asList("Current user does not have read permissions for this model."));
+          }
           return gqlToSql.execute("Thing", field, ctx.readLong("id"));
         }
       case "loginWithOTP":
@@ -131,6 +154,10 @@ public class NativeQuery extends AbstractQueryService {
           String code = ctx.readString("code");
           String deviceToken = ctx.readString("deviceToken");
           return loginWithOTP(field, token, code, deviceToken);
+        }
+      case "currentAnonymousUser":
+        {
+          return currentAnonymousUser(field);
         }
     }
     D3ELogger.info("Query Not found");
@@ -176,5 +203,10 @@ public class NativeQuery extends AbstractQueryService {
       store.Database.get().save(user);
     }
     return loginResult;
+  }
+
+  private JSONObject currentAnonymousUser(Field field) throws Exception {
+    AnonymousUser user = provider.getObject().getAnonymousUser();
+    return gqlToSql.execute("AnonymousUser", field, user.getId());
   }
 }

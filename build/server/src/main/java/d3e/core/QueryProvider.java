@@ -80,4 +80,8 @@ public class QueryProvider {
     loginResult.setToken(token);
     return loginResult;
   }
+
+  public AnonymousUser currentAnonymousUser() {
+    return provider.getObject().getAnonymousUser();
+  }
 }
