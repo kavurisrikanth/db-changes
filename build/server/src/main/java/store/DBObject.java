@@ -1,11 +1,5 @@
 package store;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-import org.apache.commons.collections.CollectionUtils;;
-
 public abstract class DBObject {
 
 	protected transient long localId;
@@ -15,7 +9,7 @@ public abstract class DBObject {
 	protected transient boolean inProxy;
 
 	public DBObject() {
-		this._changes = new DBChange(_fieldsCount());
+		this._changes = new DBChange(_fieldsCount(), this::onPropertySet, this::onPropertyUnset);
 	}
 
 	public void setLocalId(long localId) {
@@ -65,18 +59,7 @@ public abstract class DBObject {
 		if(inProxy || isOld()) {
 			return;
 		}
-		Object _old = _changes.oldValues.get(field);
-		if (_old != null && Objects.equals(newValue, _old)) {
-			// Discard
-			System.err.println("*** No changes detected in field \"" + field + "\" in type \"" + _type() + "\"");
-			this._changes.unset(field);
-			onPropertyUnset();
-			return;
-		}
-		if (_old == null) {
-			this._changes.set(field, oldValue);
-		}
-		onPropertySet(false);
+		_changes.onFieldChange(field, oldValue, newValue);
 	}
 	
 	public void collFieldChanged(int field, Object oldValue) {
@@ -87,41 +70,32 @@ public abstract class DBObject {
 		if(inProxy || isOld()) {
 			return;
 		}
-		ArrayList lc = (ArrayList) _changes.oldValues.get(field);
-		if (lc == null) {
-			lc = new ArrayList((List) oldValue);
-			this._changes.set(field, lc);
-		} else if (newValue != null) {
-			if (CollectionUtils.isEqualCollection(lc, (List) newValue)) {
-				System.err.println("*** No changes detected in field \"" + field + "\" in type \"" + _type() + "\"");
-				this._changes.unset(field);
-				onPropertyUnset();
-				return;
-			}
-		}
-		if(oldValue instanceof D3EPersistanceList) {
-			D3EPersistanceList pl = (D3EPersistanceList) oldValue;
-			if(pl.isInverse()) {
-				onPropertySet(true);
-				return;
-			}
-		}
-		onPropertySet(false);
+		_changes.onCollFieldChange(field, oldValue, newValue);
 	}
 	
 	public void invCollFieldChanged(int field, Object oldValue) {
 		if(inProxy || isOld()) {
 			return;
 		}
-		ArrayList lc = (ArrayList) _changes.oldValues.get(field);
-		if (lc == null) {
-			lc = new ArrayList((List) oldValue);
-			this._changes.set(field, lc);
+		_changes.onInvCollFieldChange(field, oldValue);
+	}
+	
+	public void childFieldChanged(int field, boolean set) {
+		if(inProxy || isOld()) {
+			return;
 		}
+		_changes.onChildFieldChange(field, set);
+	}
+	
+	public void childCollFieldChanged(int field, boolean set) {
+		if(inProxy || isOld()) {
+			return;
+		}
+		_changes.onChildCollFieldChange(field, set);
 	}
 
 	public void _clearChanges() {
-		this._changes = new DBChange(_fieldsCount());
+		this._changes = new DBChange(_fieldsCount(), this::onPropertySet, this::onPropertyUnset);
 	}
 	
 	protected void onPropertySet(boolean inverse) {
@@ -137,8 +111,7 @@ public abstract class DBObject {
 		if (_master == null) {
 			return;
 		}
-//		_master._handleChildChange(this._childIdx, set, this);
-		_master._handleChildChange(this._childIdx);
+		_master._handleChildChange(this._childIdx, set);
 	}
 	
 	public void _setChildIdx(int childIdx) {

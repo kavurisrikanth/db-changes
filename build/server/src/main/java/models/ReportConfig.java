@@ -186,11 +186,11 @@ public class ReportConfig extends DatabaseObject {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx) {
+  protected void _handleChildChange(int _childIdx, boolean set) {
     switch (_childIdx) {
       case _VALUES:
         {
-          this.collFieldChanged(_childIdx, this.values);
+          this.childCollFieldChanged(_childIdx, set);
           break;
         }
     }

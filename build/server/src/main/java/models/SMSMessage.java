@@ -88,7 +88,7 @@ public class SMSMessage extends D3EMessage {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx) {
-    super._handleChildChange(_childIdx);
+  protected void _handleChildChange(int _childIdx, boolean set) {
+    super._handleChildChange(_childIdx, set);
   }
 }

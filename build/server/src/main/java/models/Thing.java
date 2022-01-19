@@ -235,16 +235,16 @@ public class Thing extends CreatableObject {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx) {
+  protected void _handleChildChange(int _childIdx, boolean set) {
     switch (_childIdx) {
       case _CHILD:
         {
-          this.fieldChanged(_childIdx, this.child);
+          this.childFieldChanged(_childIdx, set);
           break;
         }
       case _CHILDCOLL:
         {
-          this.collFieldChanged(_childIdx, this.childColl);
+          this.childCollFieldChanged(_childIdx, set);
           break;
         }
     }

@@ -153,11 +153,11 @@ public class Avatar extends DatabaseObject {
   }
 
   @Override
-  protected void _handleChildChange(int _childIdx) {
+  protected void _handleChildChange(int _childIdx, boolean set) {
     switch (_childIdx) {
       case _IMAGE:
         {
-          this.fieldChanged(_childIdx, this.image);
+          this.childFieldChanged(_childIdx, set);
           break;
         }
     }

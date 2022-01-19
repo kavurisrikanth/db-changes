@@ -277,7 +277,7 @@ public abstract class DatabaseObject extends DBObject implements ICloneable {
 		return false;
 	}
 
-	protected void _handleChildChange(int _childIdx) {
+	protected void _handleChildChange(int _childIdx, boolean set) {
 	}
 
 	protected void _checkProxy() {
